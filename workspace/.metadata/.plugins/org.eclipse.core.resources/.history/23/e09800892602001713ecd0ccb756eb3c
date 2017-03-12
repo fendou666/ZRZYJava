@@ -1,0 +1,13 @@
+package o20170306;
+
+public class In2Recursion {
+	
+	public void recursionMethod(){
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

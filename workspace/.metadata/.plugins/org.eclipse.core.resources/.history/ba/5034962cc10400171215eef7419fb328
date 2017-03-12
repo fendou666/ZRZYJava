@@ -1,0 +1,7 @@
+package o20170308Thread;
+
+public class In2TrainTicket {
+	private String trainNo;
+	private String seatNo;
+	private String date;
+}

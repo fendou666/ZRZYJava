@@ -1,0 +1,30 @@
+package basic_20170221;
+
+// 
+public class StaticTest {
+	// 一个班里可以有多个学生但是只有一个老师，static 不管创建多少个对象，
+	// 它一直只有一个，所有创建的对象的static的值，由所有对象共同决定
+	private String sutdentName;
+	private int age;
+	private static String teacher;
+	public String getSutdentName() {
+		return sutdentName;
+	}
+	public void setSutdentName(String sutdentName) {
+		this.sutdentName = sutdentName;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public static String getTeacher() {
+		return teacher;
+	}
+	public static void setTeacher(String teacher) {
+		StaticTest.teacher = teacher;
+	}
+	
+	
+}

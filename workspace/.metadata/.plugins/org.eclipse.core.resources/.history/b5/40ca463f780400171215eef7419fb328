@@ -1,0 +1,20 @@
+package o20170309;
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+
+public class In1Client {
+	private static BufferedReader br;
+	private static PrintWriter pw;
+	private static Socket cli;
+	
+	public static void main(String[] args) {
+		cli = new Socket(InetAddress.getLocalHost(), 5500);
+		
+		
+	}
+	
+}

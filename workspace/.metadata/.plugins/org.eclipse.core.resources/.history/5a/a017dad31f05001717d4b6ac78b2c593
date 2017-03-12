@@ -1,0 +1,13 @@
+package o20170308Thread;
+
+public class In2TestTicket {
+	public static void main(String[] args) {
+		In2Passenger p1 =new In2Passenger("张三");
+		In2TrainTicket ticket1 = new In2TrainTicket("T157", "0204", "20150312");
+		In2Passenger p2 =new In2Passenger("李四");
+		In2TrainTicket ticket2 = new In2TrainTicket("T157", "0205", "20150312");
+		In2Passenger p3 = new In2Passenger("王五");
+		In2Passenger p3 = new In2Passenger("孙六");
+		In2Passenger p3 = new In2Passenger("赵七");
+	}
+}

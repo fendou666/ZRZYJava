@@ -1,0 +1,20 @@
+package o20170308Thread;
+
+public class In1TestSyn implements Runnable {
+	In1NoA a = new In1NoA();
+	In1NoB b = new In1NoB();
+	private boolean flag = false;
+	
+	
+	@Override
+	public void run() {
+		if(flag){
+			synchronized (a) {
+				a.say();
+				System.out.println("师傅A正在等待师傅B的醋");
+				Thread.sleep(3000);
+			}
+		}
+	}
+	
+}

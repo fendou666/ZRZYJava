@@ -1,0 +1,29 @@
+package o20170309;
+
+public class In4ReflectObj {
+	public static void main(String[] args) {
+		Class<?> c = null;
+		In3Student st1 = null;
+		In3Student st2 = null;
+		In3Student st3 = null;
+		c = In3Student.class;
+		
+		try {
+			st1 = (In3Student)c.newInstance();
+			st2 = (In3Student)c.newInstance();
+			st3 = (In3Student)c.newInstance();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		st1.setAge(100);
+		st1.setName("¿××Ó");
+		
+		
+		
+	}
+}

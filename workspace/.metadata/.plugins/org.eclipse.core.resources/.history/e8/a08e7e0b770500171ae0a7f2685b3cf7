@@ -1,0 +1,9 @@
+package o20170303;
+
+import java.io.File;
+
+public class Z1File {
+	public static void main(String[] args) {
+		File dir = new File("C:\\Program Files\\feiq\\Recv Files\\170308\\PPT\\PPT\\JavaSE知识点课程");
+	}
+}

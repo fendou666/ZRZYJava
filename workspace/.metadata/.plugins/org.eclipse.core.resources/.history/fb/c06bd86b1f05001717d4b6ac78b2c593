@@ -1,0 +1,8 @@
+package o20170308Thread;
+
+public class In2TestTicket {
+	public static void main(String[] args) {
+		In2Passenger p1 =new In2Passenger("уехЩ");
+		In2TrainTicket ticket1 = new In2TrainTicket("T157", "0204", "20150312")
+	}
+}

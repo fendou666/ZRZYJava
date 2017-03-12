@@ -1,0 +1,14 @@
+package o20170310DesignMode;
+
+public class In1SingleTon {
+	
+	private In1SingleTon () {
+		
+	}
+	
+	private static In1SingleTon sing = new In1SingleTon();
+	
+	
+	
+	
+}

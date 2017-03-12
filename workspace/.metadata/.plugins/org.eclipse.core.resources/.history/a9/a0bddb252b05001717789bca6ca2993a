@@ -1,0 +1,75 @@
+package o20170308Thread;
+
+public class In2TrainTicket {
+	private String trainNo;
+	private String seatNo;
+	private String date;
+	public In2TrainTicket(String trainNo, String seatNo, String date) {
+		super();
+		this.trainNo = trainNo;
+		this.seatNo = seatNo;
+		this.date = date;
+	}
+	public String getTrainNo() {
+		return trainNo;
+	}
+	public void setTrainNo(String trainNo) {
+		this.trainNo = trainNo;
+	}
+	public String getSeatNo() {
+		return seatNo;
+	}
+	public void setSeatNo(String seatNo) {
+		this.seatNo = seatNo;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + ((seatNo == null) ? 0 : seatNo.hashCode());
+		result = prime * result + ((trainNo == null) ? 0 : trainNo.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		In2TrainTicket other = (In2TrainTicket) obj;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (seatNo == null) {
+			if (other.seatNo != null)
+				return false;
+		} else if (!seatNo.equals(other.seatNo))
+			return false;
+		if (trainNo == null) {
+			if (other.trainNo != null)
+				return false;
+		} else if (!trainNo.equals(other.trainNo))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "In2TrainTicket [车次=" + trainNo + ", 座位号=" + seatNo
+				+ ", 日期=" + date + "]";
+	}
+	
+	
+	
+	
+}

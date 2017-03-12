@@ -1,0 +1,16 @@
+package o20170308Thread;
+
+public class In1TestSyn implements Runnable {
+	In1NoA a = new In1NoA();
+	In1NoB b = new In1NoB();
+	private boolean flag = false;
+	
+	
+	@Override
+	public void run() {
+		if(flag){
+			
+		}
+	}
+	
+}

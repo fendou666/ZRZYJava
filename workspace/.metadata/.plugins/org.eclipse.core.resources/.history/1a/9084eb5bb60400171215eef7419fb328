@@ -1,0 +1,12 @@
+package o20170309;
+
+public class In4ReflectObj {
+	public static void main(String[] args) {
+		private Class<?> c = null;
+		private In3Student st;
+		c = In3Student.class;
+		
+		st = (In3Student)c.newInstance();
+				
+	}
+}

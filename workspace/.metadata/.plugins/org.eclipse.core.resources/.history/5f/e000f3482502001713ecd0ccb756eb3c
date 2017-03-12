@@ -1,0 +1,7 @@
+package o20170306;
+
+public class In1SystemGetProperty {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,31 @@
+package o20170302Genericity;
+
+public class  In3Class<Z> implements Comparable<In1Book> {
+	private Z name;
+//	@Override
+//	public <T> T getT() {
+//		// TODO Auto-generated method stub
+//		return name;
+//	}
+//
+//	@Override
+//	public <T> void setT(T t) {
+//		// TODO Auto-generated method stub
+//		this.name = t;
+//		
+//	}
+//	
+
+	@Override
+	public <T> T getT() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T> void setT(T t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

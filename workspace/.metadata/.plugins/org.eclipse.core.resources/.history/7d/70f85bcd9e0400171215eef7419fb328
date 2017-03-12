@@ -1,0 +1,9 @@
+package o20170309;
+
+public class In2ServerThread extends Thread {
+	private Socket  s;
+	private BufferedReader br;
+	private PrintWriter pw;
+	
+	
+}

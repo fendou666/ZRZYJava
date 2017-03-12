@@ -1,0 +1,11 @@
+package o20170302Genericity;
+
+// [访问权限修饰符] [static] [final] <类型参数列表> 返回值类型 方法名([形式参数列表])
+
+public interface In3GenericityITF<T> {
+	
+	// 不可以这样定义，这样会，将接口的泛型隐藏
+	public <T> T getT();
+	public <T> void setT(T t);
+	
+}

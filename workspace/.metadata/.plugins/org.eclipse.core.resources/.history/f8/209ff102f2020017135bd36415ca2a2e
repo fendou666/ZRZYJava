@@ -1,0 +1,52 @@
+package o20170307Event;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class A1Event {
+	private JFrame fra;
+	private JButton greenButton = new JButton("点击我");
+	private JLabel label = new JLabel("移动鼠标");
+	
+	public A1Event(){
+		fra.setLayout(new BorderLayout());
+		fra.setSize(400, 300);
+		fra.setLocation(400, 400);
+		Container con = fra.getContentPane();
+		con.add(label);
+		
+		fra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		fra.setVisible(true);
+		fra.addMouseListener((MouseListener) new MyMouse());
+	}
+	
+	public class MyMouse implements MouseMotionListener{
+
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			label.setText("鼠标当前位置是：x:" + e.getX() + ", y:" + e.getY());
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		
+	}
+	
+	
+	
+}

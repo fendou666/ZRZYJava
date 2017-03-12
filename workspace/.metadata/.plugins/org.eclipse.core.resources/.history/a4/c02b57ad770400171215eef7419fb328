@@ -1,0 +1,7 @@
+package o20170309;
+
+public class In1Client {
+	private BufferedReader pr;
+	
+	
+}

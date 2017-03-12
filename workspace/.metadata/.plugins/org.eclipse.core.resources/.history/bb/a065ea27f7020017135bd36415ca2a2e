@@ -1,0 +1,6 @@
+package o20170307Event;
+
+public class In1ActionListener {
+	private JFrame frame = new JFrame();
+	
+}

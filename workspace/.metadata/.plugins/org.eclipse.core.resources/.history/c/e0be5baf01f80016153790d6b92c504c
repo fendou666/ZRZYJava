@@ -1,0 +1,9 @@
+package basic_20170221;
+
+// 
+public class StaticTest {
+	private String sutdentName;
+	private int age;
+	private static String teacher;
+	
+}

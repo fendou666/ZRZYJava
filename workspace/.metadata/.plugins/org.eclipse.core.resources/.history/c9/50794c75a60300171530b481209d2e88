@@ -1,0 +1,11 @@
+package o20170308Thread;
+
+public class In1ThreadName implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

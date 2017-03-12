@@ -1,0 +1,10 @@
+package o20170306;
+
+public class In3Byte {
+	public static void main(String[] args) {
+		String fileName =  "d:\\" + "test.txt"
+		File f1 = new file(fileName);
+		
+		
+	}
+}

@@ -1,0 +1,16 @@
+package o20170308Thread;
+
+public class In2TrainTicket {
+	private String trainNo;
+	private String seatNo;
+	private String date;
+	public In2TrainTicket(String trainNo, String seatNo, String date) {
+		super();
+		this.trainNo = trainNo;
+		this.seatNo = seatNo;
+		this.date = date;
+	}
+	
+	
+	
+}

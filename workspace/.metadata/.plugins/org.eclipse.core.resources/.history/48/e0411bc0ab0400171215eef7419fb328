@@ -1,0 +1,9 @@
+package o20170309;
+
+public class In3Student {
+	private String name;
+	private int age;
+	
+	
+	
+}

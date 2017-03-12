@@ -1,0 +1,22 @@
+package o20170306;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class In6ByteToCharToStream {
+	public static void main(String[] args) {
+		BufferedReader inputByteToChar = new  BufferedReader(new InputStreamReader(System.in));
+		try {
+			while(true) {
+				System.out.println("ÇëÊäÈëÒ»¸ö×Ö·û");
+				int i = inputByteToChar.read();
+				System.out.println((char)i);
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

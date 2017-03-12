@@ -1,0 +1,12 @@
+package o20170308Thread;
+
+public class In2ReturnTicketThread {
+	private In2Passenger passenger;
+	private In2TrainTicket ticket;
+	public In2ReturnTicketThread(In2Passenger passenger, In2TrainTicket ticket) {
+		super();
+		this.passenger = passenger;
+		this.ticket = ticket;
+	}
+	
+}

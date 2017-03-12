@@ -1,0 +1,21 @@
+package o20170307Event;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class A1Event {
+	private JFrame fra;
+	private JButton greenButton = new JButton("点击我");
+	private JLabel label = new JLabel("移动鼠标");
+	
+	public A1Event(){
+		fra.setLayout(new BorderLayout());
+		fra.setSize(400, 300);
+		fra.setLocation(400, 400);
+	}
+
+	
+}

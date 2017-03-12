@@ -1,0 +1,24 @@
+package o20170308Thread;
+
+public class In2Passenger {
+	private String name;
+
+	public In2Passenger(String name) {
+		super();
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void buyTicket(In2TrainTicket ticket) {
+		
+	}
+	
+	
+}

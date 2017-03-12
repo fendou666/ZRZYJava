@@ -1,0 +1,12 @@
+package o20170308Thread;
+
+public class In1TestSyn implements Runnable {
+	In1NoA a = new In1NoA();
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
