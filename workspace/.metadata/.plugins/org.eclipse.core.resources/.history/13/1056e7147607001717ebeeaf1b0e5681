@@ -1,0 +1,13 @@
+package com.chinasoft.po;
+
+public class Flower {
+	private int number;
+	private String name;
+	private String count;
+	private double price;
+	
+	
+	
+	
+	
+}

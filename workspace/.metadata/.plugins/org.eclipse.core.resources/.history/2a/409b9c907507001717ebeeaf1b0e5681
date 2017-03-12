@@ -1,0 +1,18 @@
+package com.chinasoft.test;
+
+import java.io.File;
+
+public class Init {
+	
+	
+	public static void main(String[] args) {
+		File flowers = new File("src/flowers");
+		File orders = new File("src/orders");
+		
+		if (!flowers.exists()) {
+			flowers.createNewFile();
+		}
+		
+		
+	}
+}

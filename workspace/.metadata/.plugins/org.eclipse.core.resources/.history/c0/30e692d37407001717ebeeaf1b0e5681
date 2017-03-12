@@ -1,0 +1,6 @@
+package com.chinasoft.po;
+
+public class Admin extends Perple {
+
+	
+}

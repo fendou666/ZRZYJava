@@ -1,0 +1,41 @@
+package com.chinasoft.test;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.chinasoft.po.Flower;
+import com.chinasoft.po.Order;
+
+public class Init {
+	
+	
+	public static void main(String[] args) {
+		ArrayList<Flower> flowers = new ArrayList<Flower>();
+		ArrayList<Order> orders = new ArrayList<Order>();
+		File flowersF = new File("src/flowers");
+		File ordersF = new File("src/orders");
+		
+		
+		if (!flowersF.exists()) {
+			try {
+				flowersF.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		if (!ordersF.exists()) {
+			try {
+				flowersF.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		flowers.add(new Flower());
+		
+	}
+}

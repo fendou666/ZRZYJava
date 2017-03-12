@@ -1,0 +1,33 @@
+package com.chinasoft.test;
+
+import java.io.File;
+import java.io.IOException;
+
+public class Init {
+	
+	
+	public static void main(String[] args) {
+		File flowers = new File("src/flowers");
+		File orders = new File("src/orders");
+		
+		if (!flowers.exists()) {
+			try {
+				flowers.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		if (!orders.exists()) {
+			try {
+				flowers.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}
+}

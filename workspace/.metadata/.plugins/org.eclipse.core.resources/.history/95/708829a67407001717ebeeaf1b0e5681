@@ -1,0 +1,7 @@
+package com.chinasoft.po;
+
+public class User extends Perple {
+	
+	
+	
+}

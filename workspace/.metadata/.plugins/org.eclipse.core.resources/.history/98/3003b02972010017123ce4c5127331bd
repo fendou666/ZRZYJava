@@ -1,7 +1,0 @@
-package o20170302Collection;
-
-import java.util.Collection;
-
-public class In9Collection<E> implements Collection<E> {
-
-}

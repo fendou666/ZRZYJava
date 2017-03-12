@@ -1,0 +1,10 @@
+package com.chinasoft.po;
+
+import java.util.ArrayList;
+
+public class Order {
+	private int orderNum;
+	private String address;
+	private ArrayList<Flower> flowers;
+	
+}
