@@ -1,0 +1,60 @@
+package com.test;
+
+public class Employee {
+	private String name;
+	private double salary;
+	private double subsidy;
+	private double preTax;
+	private double afterTax;
+	
+	
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	public Employee(String name, double salary, double subsidy) {
+		super();
+		this.name = name;
+		this.salary = salary;
+		this.subsidy = subsidy;
+	}
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	public double getSubsidy() {
+		return subsidy;
+	}
+	public void setSubsidy(double subsidy) {
+		this.subsidy = subsidy;
+	}
+	
+	public double getPreTaxSalay(){
+		preTax = salary + subsidy;
+		return preTax;
+	}
+	
+	public double getAfterTacSalay(){
+		
+	}
+	
+	public double getTax(){
+		
+		if (){
+			
+		}
+	}
+	
+}

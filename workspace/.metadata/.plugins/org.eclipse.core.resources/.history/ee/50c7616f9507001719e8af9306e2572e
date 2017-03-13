@@ -1,0 +1,10 @@
+package com.chinasoft.menu;
+
+public class Menu {
+	public User u = new User();
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

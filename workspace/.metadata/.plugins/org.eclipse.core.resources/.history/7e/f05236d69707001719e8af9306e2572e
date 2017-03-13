@@ -1,0 +1,22 @@
+package com.chinasoft.menu;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+import com.chinasoft.po.Admin;
+import com.chinasoft.po.User;
+
+public class Menu {
+	public HashSet<User> u;
+	public Admin admin;
+	
+	public void initInfo(){
+		u.add(new User("ÇÇÙ»", "15666666666"));
+	}
+	
+	public void start() {
+		
+		
+		
+	}
+}

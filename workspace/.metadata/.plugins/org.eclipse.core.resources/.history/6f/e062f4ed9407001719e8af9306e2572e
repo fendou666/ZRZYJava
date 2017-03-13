@@ -1,0 +1,67 @@
+package com.chinasoft.po;
+
+import java.util.ArrayList;
+
+public class User extends Perple {
+	
+	private ArrayList<String> addresss;
+	
+	private ArrayList<Order> orders;
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public User(String name, String telephone) {
+		super(name, telephone);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public User(ArrayList<String> addresss, ArrayList<Order> orders) {
+		super();
+		this.addresss = addresss;
+		this.orders = orders;
+	}
+	
+	
+	
+	
+	
+	
+
+	public ArrayList<String> getAddresss() {
+		return addresss;
+	}
+
+	public void setAddresss(ArrayList<String> addresss) {
+		this.addresss = addresss;
+	}
+
+	public ArrayList<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(ArrayList<Order> orders) {
+		this.orders = orders;
+	}
+	
+	
+	
+}

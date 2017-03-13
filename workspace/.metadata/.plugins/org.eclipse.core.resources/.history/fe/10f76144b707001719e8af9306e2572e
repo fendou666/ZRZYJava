@@ -1,0 +1,11 @@
+package com.test;
+
+import java.util.Scanner;
+
+public class IncomeTax {
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+	}
+}

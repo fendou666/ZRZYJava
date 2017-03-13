@@ -1,0 +1,18 @@
+package com.chinasoft.po;
+
+public abstract class Perple {
+	private String name;
+	private String telephone;
+	
+	
+	
+	public Perple(String name, String telephone) {
+		super();
+		this.name = name;
+		this.telephone = telephone;
+	}
+	
+	
+	
+	
+}

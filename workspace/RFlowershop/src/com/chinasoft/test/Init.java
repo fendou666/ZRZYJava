@@ -42,11 +42,11 @@ public class Init {
 		flowers.add(new Flower(3, "马蹄莲", 600, 88.8));
 		flowers.add(new Flower(4, "玫瑰花", 999, 99.9));
 		
-		orders.add(new Order("or0000001", "陕西西安莲湖区", new ArrayList<Flower>() {
-			
-														    add(new Flower(1, "郁金香", 10, 333));
-														    add(new Flower(4, "玫瑰花", 10, 999));
-														}));
+//		orders.add(new Order("or0000001", "陕西西安莲湖区", new ArrayList<Flower>() {
+//			
+//														    add(new Flower(1, "郁金香", 10, 333));
+//														    add(new Flower(4, "玫瑰花", 10, 999));
+//														}));
 														
 		
 	}

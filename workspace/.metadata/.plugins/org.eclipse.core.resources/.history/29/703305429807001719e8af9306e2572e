@@ -1,0 +1,9 @@
+package com.chinasoft.po;
+
+import java.util.ArrayList;
+
+public class Admin extends Person {
+	private ArrayList<Order> orders;
+	private ArrayList<Flower> flowers;
+	
+}

@@ -1,0 +1,34 @@
+package com.test;
+
+public class A2Teacher extends A1People {
+	private double salary;
+
+	
+	
+	public A2Teacher() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public A2Teacher(String name, int age) {
+		super(name, age);
+		// TODO Auto-generated constructor stub
+	}
+
+	public A2Teacher(String name, int age, int sno) {
+		super(name, age);
+		this.sno = sno;
+	}
+	
+	public String PrintInfo() {
+		return "老师姓名：" + getName() + ", 年龄：" + getAge() + "， 工资：" + salary ;
+	}
+	
+	public static void main(String[] args) {
+		A2Teacher stu = new A2Teacher("李明", 32, 8123);
+		System.out.println(stu.PrintInfo());
+	}
+	
+	
+}
