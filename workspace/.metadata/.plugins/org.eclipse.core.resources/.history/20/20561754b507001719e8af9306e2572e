@@ -1,7 +1,0 @@
-package com.test;
-
-public class Employee {
-	private String name;
-	private double salary;
-	private double subsidy;
-}

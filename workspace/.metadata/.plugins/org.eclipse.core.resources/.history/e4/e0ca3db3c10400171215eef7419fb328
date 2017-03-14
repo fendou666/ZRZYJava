@@ -1,8 +1,0 @@
-package o20170308Thread;
-
-public class In2TicketSeller {
-	public static In2TrainTicket sellTicket(In2TrainTicket ticket) {
-		In2TrainTicket t = null;
-		
-	}
-}

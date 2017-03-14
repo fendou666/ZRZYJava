@@ -1,7 +1,0 @@
-package com.test;
-
-public class A2Student extends A1People {
-	private int sno;
-	
-	
-}

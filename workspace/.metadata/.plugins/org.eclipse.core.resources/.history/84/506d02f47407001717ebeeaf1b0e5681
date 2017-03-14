@@ -1,7 +1,0 @@
-package com.chinasoft.po;
-
-public class Admin extends Perple {
-	private ArrayList<Order> orders;
-	private ArrayList<Flower> flowers;
-	
-}
