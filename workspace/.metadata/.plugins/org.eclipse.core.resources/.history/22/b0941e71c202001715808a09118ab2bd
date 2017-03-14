@@ -1,9 +1,0 @@
-package o20170306;
-
-public class In6ByteToChar {
-	public static void main(String[] args) {
-		InputStreamReader inputByteToChar = InputStreamReader(System.in);
-		
-		
-	}
-}

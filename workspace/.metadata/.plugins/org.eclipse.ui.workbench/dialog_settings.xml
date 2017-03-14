@@ -5,10 +5,10 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
 			<item value="D:\Desktop\corejava9"/>
+			<item value="D:\Desktop\TIJ4-code11"/>
 			<item value="C:\Program Files\feiq\Recv Files\群聊代码"/>
 			<item value="D:\Desktop"/>
 			<item value="E:\java\javase\workspaceold\AdvancedProgramming\src\o20170302Genericity"/>
-			<item value="E:\java\javase\workspaceold\AdvancedProgramming\src\o20170303"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
@@ -27,17 +27,17 @@
 		<item value="8" key="DIALOG_Y_ORIGIN"/>
 		<item value="651" key="DIALOG_X_ORIGIN"/>
 	</section>
+	<section name="InstallationDialogSettings">
+		<item value="706" key="DIALOG_WIDTH"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+		<item value="836" key="DIALOG_HEIGHT"/>
+		<item value="615" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 		</list>
-	</section>
-	<section name="InstallationDialogSettings">
-		<item value="706" key="DIALOG_WIDTH"/>
-		<item value="8" key="DIALOG_Y_ORIGIN"/>
-		<item value="615" key="DIALOG_X_ORIGIN"/>
-		<item value="836" key="DIALOG_HEIGHT"/>
-		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="FileSystemExportWizard">
 	</section>

@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>TIJ4-code11</name>
-			<type>2</type>
-			<location>D:/桌面实际/学习/java编程思想/TIJ4-code11</location>
-		</link>
-	</linkedResources>
 </projectDescription>
