@@ -1,7 +1,0 @@
-package com.chinasoft.test;
-
-public class Init {
-	public static void main(String[] args) {
-		
-	}
-}

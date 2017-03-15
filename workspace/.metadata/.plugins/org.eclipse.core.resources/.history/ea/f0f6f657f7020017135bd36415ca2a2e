@@ -1,7 +1,0 @@
-package o20170307Event;
-
-import javax.swing.JFrame;
-
-public class In1ActionListener extends JFrame {
-	
-}

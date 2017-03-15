@@ -1,5 +1,0 @@
-package o20170307Thread;
-
-public class In2Runnable implements Rannable {
-
-}

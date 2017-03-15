@@ -1,7 +1,0 @@
-package o20170308Thread;
-
-public class In1NoB {
-	public void say() {
-		System.out.println("Ê¦¸µ")
-	}
-}

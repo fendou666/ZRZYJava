@@ -1,7 +1,0 @@
-package o20170308Thread;
-
-public class In2TestTicket {
-	public static void main(String[] args) {
-		
-	}
-}
