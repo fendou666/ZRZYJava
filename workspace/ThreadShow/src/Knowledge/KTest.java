@@ -5,13 +5,17 @@ public class KTest {
 	
 	public static void main(String[] args) {
 //		线程对成员变量和局部变量的影响
-//		K1Value thObj1 = new K1Value();
-//		Thread th1 = new Thread(thObj1, "线程1");
-//		Thread th2 = new Thread(thObj1, "线程2");
+//		Thread th1 = new Thread(new K1Value(), "线程1");
+//		Thread th2 = new Thread(new K1Value(), "线程2");
 //		th1.start();
 //		th2.start();
-//		同步普通方法锁与静态方法锁
-//		K2MethodLock ObjM = new K2MethodLock();
+//		证明方法锁就是锁的是当前对象
+//		线程的赋值，构造方法，方法传参
+//		不论哪种表现形式，只要拥有了相同的成员变量或者传递了相同的参数，他们之间就有了关系
+//		这个是表现形式3,为了让他们有关系，我让各个线程拥有相同的成员变量
+//		同步普通方法锁与静态方法锁,指的是成员变量对象的锁
+//		这是一个纯测试对象，把它创建的对象作为不同线程类创建的不同线程的相同成员变量, K2Thread实现runnable接口
+//		K2MethodLock ObjM = new K2MethodLock();	
 //		Thread th1 = new Thread(new K2Thread1(ObjM),  "线程1");
 //		Thread th2 = new Thread(new K2Thread2(ObjM),  "线程2");
 //		Thread th3 = new Thread(new K2Thread3(ObjM),  "线程3");
@@ -39,16 +43,31 @@ public class KTest {
 //		th4.start();
 //		th5.start();
 //		静态所与同步锁结合
-		K4CommonAndStatic Obj = new K4CommonAndStatic();
-		Thread th1 = new Thread(new K4CommonThread(Obj),  "普通方法线程");
-		Thread th2 = new Thread(new K4StaticThread(Obj),  "静态方法线程");
-		th1.start();
-		th2.start();
-//		静态方法锁与普通方法锁
-		
+//		K4CommonAndStatic obj = new K4CommonAndStatic();
+//		Thread th1 = new Thread(new K4CommonThread(obj),  "普通方法线程");
+//		Thread th2 = new Thread(new K4StaticThread(obj),  "静态方法线程");
+//		th1.start();
+//		th2.start();
 //		因为每个run调用的对象的方法不同，所以要启动多个线程
 //		对象锁
-
+//		K5ObjLock obj = new K5ObjLock();
+//		Thread th1 = new Thread(new K5Thread1(obj),  "线程1");
+//		Thread th2 = new Thread(new K5Thread2(obj),  "线程2");
+//		th1.start();
+//		th2.start();
+		
+		// 方法锁，静态锁，对象锁
+//		证明只有方法锁锁的是this对象， 一个对象一把锁，另一把锁属于类
+//		K6ObjAllLock obj =  new K6ObjAllLock();
+//		Thread th1 = new Thread(new K6Thread1(obj),  "同步块线程");
+//		Thread th2 = new Thread(new K6Thread2(obj),  "同步方法线程");
+//		Thread th3 = new Thread(new K6Thread3(obj),  "静态方法线程");
+//		th1.start();
+//		th2.start();
+//		th3.start();
+		
 //		等待与唤醒		
+		
+		
 	}
 }
