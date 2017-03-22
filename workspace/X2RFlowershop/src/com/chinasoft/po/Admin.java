@@ -11,10 +11,19 @@ public class Admin extends Person {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Admin(String name, String telephone) {
-		super(name, telephone);
+	public Admin(String name, String pwd) {
+		super(name, pwd);
 		// TODO Auto-generated constructor stub
 	}
+
+	public Admin(String name, String pwd, String telephone) {
+		super(name, pwd, telephone);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	
+
 
 
 

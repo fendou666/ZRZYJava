@@ -27,11 +27,18 @@ public class User extends Person {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public User(String name, String telephone) {
-		super(name, telephone);
+	
+	public User(String name, String pwd) {
+		super(name, pwd);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public User(String name, String pwd, String telephone) {
+		super(name, pwd, telephone);
+		// TODO Auto-generated constructor stub
+	}
+
+	
 	
 //	public User(ArrayList<String> addresss, ArrayList<Order> orders) {
 //		super();
@@ -50,6 +57,12 @@ public class User extends Person {
 	
 	
 	
+	
+
+
+	
+
+
 
 	public ArrayList<String> getAddresss() {
 		return addresss;
