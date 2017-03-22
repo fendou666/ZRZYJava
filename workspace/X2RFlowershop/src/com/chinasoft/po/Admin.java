@@ -6,8 +6,6 @@ public class Admin extends Person {
 	private ArrayList<Order> orders;
 	private ArrayList<Flower> flowers;
 	
-	
-	
 	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -1,4 +1,4 @@
-package com.chinasoft.po;
+package o20170303;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,20 +12,23 @@ import java.util.Iterator;
 
 /**
  * 
+ * 
+ * 
  * 只能将支持 java.io.Serializable 接口的对象写入流中
  * 
  * @author liushuai
  *
  */
 
-public class  Store<T> implements Serializable{
+
+public class  ObjectFile<T> implements Serializable{
 	private final String DATA_PATH;
 	
-	public Store() {
+	public ObjectFile() {
 		DATA_PATH = "src/data.txt";
 	}
 	
-	public Store(String fileString) {
+	public ObjectFile(String fileString) {
 		DATA_PATH = fileString;
 	}
 	
