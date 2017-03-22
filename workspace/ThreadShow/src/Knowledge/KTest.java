@@ -67,7 +67,16 @@ public class KTest {
 //		th3.start();
 		
 //		等待与唤醒		
+		K7WaitNotify  obj =  new K7WaitNotify();
+//		如果两个线程同时运行看不出效果，因为有可能等待线程还没有运行，唤醒线程已经启动  //这里有问题需要重新整理思路 ，真的一定要按顺序吗
+//		先运行等待线程
+		Thread th1 = new Thread(new K7Thread1(obj),  "wait线程");
+		th1.start();
+//		等等待线程运行完毕，在运行唤醒线程(即先将这两行注释掉，在运行)
+		Thread th2 = new Thread(new K7Thread2(obj),  "notify线程");
+		th2.start();
 		
+//		一个位置等待，其他位置唤醒
 		
 	}
 }
