@@ -1,3 +1,5 @@
 /workspace/.metadata
 !workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles
-/bin/
+!properties
+!properties.*
+!*.properties

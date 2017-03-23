@@ -60,11 +60,14 @@ public class Menu {
 		}while(inputValue!=1||inputValue!=2);
 		return inputValue;
 	}
-	public Person uiUserLogin(){
+	public Person uiUserLogin(int userType){
 		System.out.println("请以这种格式：用户名_密码\n方式输入用户名密码");
 		String st = input.next();
 		String [] stAry = st.split("_");
-		return (new Person(stAry[0], stAry[1]));
+		if(userType == 1){
+			return (new User(stAry[0], stAry[1]));
+		}
+		return (new Admin(stAry[0], stAry[1]));
 	}
 	
 	public void userOperationMain(){
