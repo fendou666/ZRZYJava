@@ -1,2 +1,2 @@
 /workspace/.metadata/
-!workspace/.metadata/.plugins/org.eclipse.core.resources
+!/workspace/.metadata/.plugins/org.eclipse.core.resources
