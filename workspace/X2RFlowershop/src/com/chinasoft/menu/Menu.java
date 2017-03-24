@@ -26,7 +26,6 @@ public class Menu {
 		admin.getFlowers().add(new Flower(3, "ÂíÌãÁ«", 600, 88.8));
 		admin.getFlowers().add(new Flower(4, "Ãµ¹å»¨", 999, 99.9));
 		
-		
 	}
 	
 	
