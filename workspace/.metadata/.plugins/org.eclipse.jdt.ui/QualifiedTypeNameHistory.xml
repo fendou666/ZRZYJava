@@ -8,11 +8,25 @@
 <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="o20170303.ObjectBase"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="o20170303.ObjectFile"/>
 <fullyQualifiedTypeName name="o20170303.In11Student"/>
 <fullyQualifiedTypeName name="java.lang.Iterable"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.chinasoft.po.Person"/>
+<fullyQualifiedTypeName name="com.chinasoft.po.Store"/>
+<fullyQualifiedTypeName name="com.chinasoft.po.Flower"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.chinasoft.po.ArrayListStore"/>
+<fullyQualifiedTypeName name="com.chinasoft.po.HashSetStore"/>
+<fullyQualifiedTypeName name="com.chinasoft.po.HashMapStore"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.chinasoft.po.User"/>
+<fullyQualifiedTypeName name="com.chinasoft.manage.UserManage"/>
+<fullyQualifiedTypeName name="com.chinasoft.manage.AdminManage"/>
+<fullyQualifiedTypeName name="com.chinasoft.po.Order"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.chinasoft.menu.MenuNew"/>
 </qualifiedTypeNameHistroy>

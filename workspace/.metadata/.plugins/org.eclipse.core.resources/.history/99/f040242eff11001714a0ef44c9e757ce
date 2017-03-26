@@ -1,0 +1,12 @@
+package com.chinasoft.po;
+
+public abstract class User {
+	private String name;
+	private String pwd;
+	private String telephone;
+	private String type;
+	
+	
+	
+	
+}
