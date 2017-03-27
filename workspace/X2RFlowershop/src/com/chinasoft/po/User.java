@@ -1,9 +1,10 @@
 package com.chinasoft.po;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class User {
+public class User  implements Serializable {
 	private String name;
 	private String pwd;
 	private String telephone;

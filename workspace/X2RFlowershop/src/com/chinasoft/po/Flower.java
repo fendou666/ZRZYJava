@@ -1,6 +1,8 @@
 package com.chinasoft.po;
 
-public class Flower {
+import java.io.Serializable;
+
+public class Flower  implements Serializable {
 	private int number;
 	private String name;
 	private int count;

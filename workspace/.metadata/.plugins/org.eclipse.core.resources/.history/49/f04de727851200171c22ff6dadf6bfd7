@@ -45,17 +45,12 @@ public class AdminManage {
 		if (userInfo == null){
 			userInfo = new HashMap<User, ArrayList<Order>>();
 		}
-//		初始化新订单与发货订单
-//		文件标识符
-		HashMapStore<String, ArrayList<Order>> adminOrderFileO = new HashMapStore<String,ArrayList<Order>>("src/AdminOrderInfo.txt");
-//		读取文件数据
+//		初始化未发货订单
+		ArrayListStore<Order> adminOrderFileO = new ArrayListStore<Order>("src/AdminOrderInfo.txt");
 		adminOrder = adminOrderFileO.queryData();
 		if (adminOrder == null){
-			adminOrder = new HashMap<String, ArrayList<Order>>();
-			adminOrder.put("NoShipments", new ArrayList<Order>());
-			adminOrder.put("Shipments", new ArrayList<Order>());
+			adminOrder = new ArrayList<Order>();
 		}
-		
 		
 	}
 
@@ -64,11 +59,12 @@ public class AdminManage {
 	}
 	
 //	用户管理
-//	用户注册
-	public void userAdd(String name, String pwd, String telephone){
+//	用户注册 存在BUG 如果用户已经注册居然还可以注册，TODO
+	public User userAdd(String name, String pwd, String telephone){
 		User u = new User(name, pwd, telephone, "user");
 		userAll.add(u);
 		userInfo.put(u , u.getOrderList());
+		return u;
 	}
 //	用户登录验证
 	public User userVerify(User u){
@@ -121,39 +117,66 @@ public class AdminManage {
 			System.out.println(iterator.next());
 		}
 	}
+	public Flower getFlower(int number, int count){
+		Iterator<Flower> iterator = flowerLib.iterator();
+		Flower partFlower = null;
+		while(iterator.hasNext()){
+			partFlower = iterator.next();
+			if(partFlower.getNumber() == number){
+				partFlower.setCount(count);
+				return partFlower;
+			}
+		}
+		return partFlower;
+	}
+	
 	
 	
 	
 //	订单管理
-//	订单查找（未发货，已发货，已签收）
+//	订单仅限未发货
 	public void getNoShipments(){
-		Iterator<Order> iterator = adminOrder.get("NoShipments").iterator();
+		Iterator<Order> iterator = adminOrder.iterator();
 		while(iterator.hasNext()){
 			System.out.println(iterator.next());
 		}
 	}
-	public void getShipments(){
-		Iterator<Order> iterator = adminOrder.get("Shipments").iterator();
-		while(iterator.hasNext()){
-			System.out.println(iterator.next());
-		}
-	}
+//	查找发货状态，不需要
+//	public void getShipments(){
+//		Iterator<Order> iterator = adminOrder.get("Shipments").iterator();
+//		while(iterator.hasNext()){
+//			System.out.println(iterator.next());
+//		}
+//	}
 //	订单更新（订单更新，对需要更新的订单进行更改）
 //	将未发货设置发货
-	public void changeOrderToShipments(String orderNum){
-		Iterator<Order> iterator = adminOrder.get("NoShipments").iterator();
+	public void changeOrderToShipments(String orderNum, UserManage uM){
+		Iterator<Order> iterator = adminOrder.iterator();
 		Order partOrder = null;
 		while(iterator.hasNext()){
 			partOrder = iterator.next();
 			if(partOrder.getOrderNum().equals(orderNum)){
-				adminOrder.get("NoShipments").remove(partOrder);
 				partOrder.setStatus("已发货");
-				adminOrder.get("Shipments").add(partOrder);
+				adminOrder.remove(partOrder);
+			}
+		}
+//		用户那边分类订单的修改
+		ArrayList<Order> uOrder = uM.getOrderSorter().get("NoShipments");
+		Iterator<Order> iteratorU = uOrder.iterator();
+		partOrder = null;
+		while(iteratorU.hasNext()){
+			partOrder = iteratorU.next();
+			if(partOrder.getOrderNum().equals(orderNum)){
+				partOrder.setStatus("已发货");
+				uOrder.remove(partOrder);
+				uM.getOrderSorter().get("Shipments").add(partOrder);
 			}
 		}
 	}
-//	订单关闭	
+//	订单关闭 ---无用不做	
 //  订单增加(用户调用，用户创建订单后调用)
-	
-	
+	public void addAdminOrder(Order od){
+		adminOrder.add(od);
+	}
+
 }

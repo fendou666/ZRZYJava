@@ -24,6 +24,9 @@ public class AdminManage {
 //	未发货订单
 	private ArrayList<Order> adminOrder;
 	
+	
+	
+//	TODO 对于用户和花库不要再次创建文件
 	{
 //		初始化用户
 		HashSetStore<User> userFileO = new HashSetStore<User>("src/User.txt");

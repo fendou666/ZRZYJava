@@ -1,9 +1,10 @@
 package com.chinasoft.po;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Order {
+public class Order implements Serializable {
 //	订单号
 	private String orderNum;
 //	收件人地址
