@@ -1,0 +1,9 @@
+package com.orcle.J20170330;
+
+public class O1BaseDao {
+	public Connection getConnection(String host){
+//		下面这句话可以不需要吗
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+	}
+}

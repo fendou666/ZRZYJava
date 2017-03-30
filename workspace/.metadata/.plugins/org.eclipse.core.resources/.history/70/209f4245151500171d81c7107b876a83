@@ -1,0 +1,7 @@
+package com.orcle.J20170330;
+
+public class O1BaseDao {
+	public Connection getConnection(String host){
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+	}
+}

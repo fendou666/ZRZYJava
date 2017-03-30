@@ -1,0 +1,27 @@
+package com.orcle.J20170330;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class O1BaseDao {
+	public Connection getConnection(String host) throws SQLException, ClassNotFoundException{
+//		下面这句话可以不需要吗
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@"+host+":1521:orcl","scott","tiger");
+		return conn;
+	}
+	public ResultSet select(Connection conn, String sql){
+		ResultSet rs = null;
+		
+		
+		
+		
+		return aryT;
+	}
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.orcle.J20170330;
+
+public class In1Student {
+	private int stuid;
+	private String name;
+	private String sex;
+	private String className;
+	
+	
+}

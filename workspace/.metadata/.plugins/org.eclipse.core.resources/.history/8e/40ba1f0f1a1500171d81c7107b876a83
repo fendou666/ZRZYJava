@@ -1,0 +1,10 @@
+package com.orcle.J20170330;
+
+public class O2GetTableDao<T> {
+	
+	public List<T> selectData(){
+		ArrayList<T> aryL = new ArrayList<T>();
+		
+	}
+	
+}

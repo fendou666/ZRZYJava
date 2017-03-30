@@ -1,0 +1,47 @@
+package com.orcle.J20170330;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class In1BaseDao {
+//	Java DataBase connectivity
+//	JAVA API
+	public Connection getConnection() throws Exception{
+//		此处class大写
+//		2:加载驱动
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+//		3：创建数据库连接
+//		URL:协议名+IP地址+端口号+数据库名称
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:"
+				+ "@localhost:1521:orcl", "scott","tiger");
+		return conn;
+	}
+	
+//	4.数据操作
+//	查询数据
+	public ResultSet select(Connection conn, String sql) throws SQLException{
+		ResultSet rs = null;
+		if(conn!=null&&!conn.isClosed()){
+//			4.1创建Statement对象
+			Statement stm = conn.createStatement();
+//			4.2调用Statement对象里面的方法执行相应的sql语句并返回它的结果
+			rs = stm.executeQuery(sql);
+		}
+		return rs;
+	}
+//	增删改数据(DML) executeUpdate() 注意返回值为int
+	public int update(Connection conn, String sql){
+		int resultCount = 0;
+		if(!conn==null&!conn.isClosed()){
+			
+		}
+		
+	}
+	
+	
+	
+//	5.关闭数据库
+}
