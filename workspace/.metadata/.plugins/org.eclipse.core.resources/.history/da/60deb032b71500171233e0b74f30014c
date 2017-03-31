@@ -1,0 +1,10 @@
+package JD20170331;
+
+public abstract class J3 {
+	private int in1;
+	private String str1;
+	
+	
+	
+	
+}

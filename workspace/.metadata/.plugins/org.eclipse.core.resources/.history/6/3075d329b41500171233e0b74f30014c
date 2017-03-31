@@ -1,0 +1,16 @@
+package JD20170331;
+
+import java.io.FileInputStream;
+
+public class J1 {
+	public static boolean readFile(File f){
+		FileInputStream fis = new FileInputStream(f);
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		File f = new File();
+		readFile(f);
+	}
+}
