@@ -48,15 +48,15 @@ public class Ex20170331 {
 		char g;
 		String h;
 		Object o = new Object();
-		System.out.println(a);
-		System.out.println(b);
-		System.out.println(c);
-		System.out.println(d);
-		System.out.println(e);
-		System.out.println(f);
-		System.out.println(g);
-		System.out.println(h);
-		System.out.println(o);
+//		System.out.println(a);
+//		System.out.println(b);
+//		System.out.println(c);
+//		System.out.println(d);
+//		System.out.println(e);
+//		System.out.println(f);
+//		System.out.println(g);
+//		System.out.println(h);
+//		System.out.println(o);
 	}
 	
 	public void testBasicType(){
@@ -196,10 +196,19 @@ public class Ex20170331 {
 		for (int i=0;i<aa.size();i++){
 			System.out.println(aa.get(i));
 		}
+		@SuppressWarnings("unchecked")
 		List<Integer> intList = aa;
 		for (int i=0;i<intList.size();i++){
 			System.out.println(intList.get(i));
 		}
+		
+//		Éî¶È²âÊÔ
+		List<String> strList = new ArrayList<String>();
+		strList.add("111");
+		strList.add("222");
+		strList.add("333");
+		List<Integer> inList = strList;
+		
 		
 	}
 	

@@ -29,7 +29,6 @@ public class ExInherit20170331 {
 		ExInherit20170331 p = new C();
 		System.out.println(p.i);
 		p.i = 50;
-		System.out.println(p.i);
 		p.change(15);
 		System.out.println(p.i);
 		p.print();
@@ -39,9 +38,9 @@ public class ExInherit20170331 {
 	public static void main(String[] args) {
 		ExInherit20170331 t = new ExInherit20170331();
 //		测试构造方法
-//		t.testConstructor();
+		t.testConstructor();
 //		测试属性和方法
-		t.testPropertyMethod();
+//		t.testPropertyMethod();
 		
 	}
 }

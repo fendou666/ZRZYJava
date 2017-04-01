@@ -4,9 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ex20170331 {
-private char[] a;
-
-
+	private int a;
+	private short b;
+	private long c;
+	private float d;
+	private double e;
+	private boolean f;
+	private char g;
+	private String h;
+	private Object o;
 
 	//	当初没有想到用一个方法传不同的参数
 	public boolean foo(char c){
@@ -21,16 +27,6 @@ private char[] a;
 		}
 	}
 //	测试对象的默认值
-	public Ex20170331(){
-		int a;
-		short b;
-		long c;
-		float d;
-		double e;
-		boolean f;
-		char g;
-		String h;
-	}
 	public void test(){
 		System.out.println(this.a);
 		System.out.println(this.b);
@@ -40,6 +36,7 @@ private char[] a;
 		System.out.println(this.f);
 		System.out.println(this.g);
 		System.out.println(this.h);
+		System.out.println(this.o);
 	}
 	public void basicTest(){
 		int a;
@@ -50,14 +47,16 @@ private char[] a;
 		boolean f;
 		char g;
 		String h;
-		System.out.println(a);
-		System.out.println(b);
-		System.out.println(c);
-		System.out.println(d);
-		System.out.println(e);
-		System.out.println(f);
-		System.out.println(g);
-		System.out.println(h);
+		Object o = new Object();
+//		System.out.println(a);
+//		System.out.println(b);
+//		System.out.println(c);
+//		System.out.println(d);
+//		System.out.println(e);
+//		System.out.println(f);
+//		System.out.println(g);
+//		System.out.println(h);
+//		System.out.println(o);
 	}
 	
 	public void testBasicType(){
@@ -72,7 +71,8 @@ private char[] a;
 		int x=1,y=2,z=3;
 //int
 //		int的所有计算都回取整
-		y+=z--/++x;   
+		y+=z--/++x;
+//		int为3，double为3.5
 		System.out.println(y);
 //		不管何时运算++都是最后算,查运算符优先级
 		int m = 2;
@@ -201,8 +201,29 @@ private char[] a;
 			System.out.println(intList.get(i));
 		}
 		
+//		深度测试
+		
+		
 	}
 	
+	
+	public void testCondition(){
+		boolean a = true;
+		boolean b = true;
+		int c = 2;
+		if (a|b){
+			
+		}
+		if (a||b){
+					
+		}
+//		if ((a^b)|c){
+//			
+//		}
+//		if ((a&c)){
+//			
+//		}
+	}
 	
 	
 	public static void main(String[] args) {
@@ -210,10 +231,17 @@ private char[] a;
 //		ex.testBasicType();
 //		ex.testFor();
 //		ex.testString();
-		ex.testArray();
+//		ex.testArray();
 //		ex.testList();
-		
-		
+		int a=5;
+		int b=3;
+		System.out.println(a^b);
+//		测试对象的默认值, 经测试对象的默认值与数组中的默认值一样
+//		ex.test();
+//		Object o = new Object();
+//		Object p;
+//		System.out.println(o);
+//		System.out.println(p);
 		
 	}
 }
