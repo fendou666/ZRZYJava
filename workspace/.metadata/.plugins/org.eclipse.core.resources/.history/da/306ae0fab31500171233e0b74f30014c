@@ -1,0 +1,14 @@
+package JD20170331;
+
+public class J1 {
+	public static boolean readFile(File f){
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		File f = new File();
+		readFile(f);
+	}
+}

@@ -1,0 +1,17 @@
+package JD20170331;
+
+import java.io.File;
+
+public class J2 {
+	
+	public static  void writerFile(String str){
+		
+		File f = new File("src/JD20170331/Dest.txt");
+		
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+	
+}

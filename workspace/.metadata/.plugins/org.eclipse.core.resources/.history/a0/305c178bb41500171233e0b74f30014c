@@ -1,0 +1,34 @@
+package JD20170331;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class J1 {
+	public static boolean readFile(File f){
+		if(!f.exists()){
+			return false;
+		}
+		try {
+			int bt = 0;
+			FileInputStream fis = new FileInputStream(f);
+			while((bt=fis.read())!=-1){
+				
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return true;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		File f = new File();
+		readFile(f);
+	}
+}

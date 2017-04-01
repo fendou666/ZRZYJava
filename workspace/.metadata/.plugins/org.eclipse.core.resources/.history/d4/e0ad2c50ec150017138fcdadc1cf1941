@@ -1,0 +1,39 @@
+package a1summary;
+
+
+
+// 方法对值有就近原则
+//  外面的访问属性使用父类属性
+public class ExInherit20170331 {
+	int i = 10;
+	public ExInherit20170331(){
+		System.out.println("父类构造函数");
+	}
+	
+	
+	public void change(int i){
+		this.i = i;
+	}
+	public void print(){
+		System.out.println(this.i);
+	}
+	
+	public static void main(String[] args) {
+		ExInherit20170331 p = new C();
+		p.i = 50;
+		p.change(15);
+		System.out.println(p.i);
+		p.print();
+	}
+}
+class C extends ExInherit20170331 {
+	int i = 20;
+	public C(){
+		
+	}
+	
+	public void print(){
+//		i++;
+		System.out.println(this.i);
+	}
+}

@@ -46,6 +46,8 @@ public class Z2Music {
 		
 		return true;
 	}
+
+	
 //	字节copy2
 	public static boolean byteCopy2(File from, File to){
 		if(!from.exists()){
@@ -67,6 +69,36 @@ public class Z2Music {
 		
 		return true;
 	}
+//	字节copy3 
+	public static boolean byteCopy3(File from, File to){
+		if(!from.exists()){
+			return false;
+		}
+		
+		int redLegth;
+		byte [] b = new byte[1024];
+		try {
+			FileInputStream fis = new FileInputStream(from);
+			FileOutputStream fos = new FileOutputStream(to);
+			while((redLegth = fis.read(b))!=-1){
+//				用这个读取没问题，redLegth返回每次读到字符
+				fos.write(b,0,redLegth);
+//				会将文件读大， 最后一个1024读入写入1024有问题
+//				fos.write(b);
+			}
+			
+			fis.close();
+			fos.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return true;
+	}
+	
+	
+	
 	
 //	字节转字符写入文件 发现丢字节
 	public static boolean byteToCharCopy1(File from, File to){
@@ -116,7 +148,7 @@ public class Z2Music {
 	public static void main(String[] args) {
 		File readF = new File("D:\\360极速浏览器下载\\yy小损样-十年戎马心孤单.mp3");
 		File writeF = new File("E:\\yy小损样-十年戎马心孤单.mp3");
-		if(byteToCharCopy2(readF,writeF)){
+		if(byteCopy3(readF,writeF)){
 			System.out.println("文件copy成功");
 		}else{
 			System.out.println("文件copy失败");

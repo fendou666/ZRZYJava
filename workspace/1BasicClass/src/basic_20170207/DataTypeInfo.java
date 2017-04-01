@@ -29,10 +29,18 @@ public class DataTypeInfo {
 		String octal = Integer.toOctalString(10); // 10为int类型 
 		String decimal = Integer.toHexString(10); // 10为int类型 
 		
+		
 		// 任意进制测试
+//		System.out.println("******任意进制转换");
 //		System.out.println(anyBase("0",2));
+//		System.out.println(anyBase("-1",2));
 //		System.out.println(anyBase("1",2));
 //		System.out.println(anyBase("-10",2));
+		
+		System.out.println(Integer.toBinaryString(0));
+		System.out.println(Integer.toBinaryString(1));
+		System.out.println(Integer.toBinaryString(-1));
+		
 		
 		// 以int为类
 		int a = 0;
