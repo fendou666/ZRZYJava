@@ -1,0 +1,18 @@
+package SerializableT;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+public class A1Test {
+	public void writeObj(){
+		ObjectOutputStream objops = new ObjectOutputStream(new FileOutputStream("src/SerializableT/testObj.txt")); 
+		
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

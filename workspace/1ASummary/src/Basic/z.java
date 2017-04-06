@@ -75,7 +75,7 @@ public class z {
 		System.out.println(Integer.parseInt("00000000000000000000000000000010", 2));
 //		System.out.println(new BigInteger("10000000000000000000000000000000", 2));
 		
-		
+		System.out.println(Integer.toBinaryString(-1));
 //		i+=1;
 //		System.out.println(i); // -2147483648
 //		i+=1;
@@ -142,9 +142,12 @@ public class z {
 		
 		
 //		引用常量null测试
-		((TestClass)null).theMethod();
-		((TestClass)null).theStatic();
-		TestClass.theStatic();
-		if(Object.class.equals(obj))
+//		((TestClass)null).theMethod();
+//		((TestClass)null).theStatic();
+//		TestClass.theStatic();
+//		if(Object.class.equals(obj))
+		
+		System.out.println(Integer.reverse(1));
+		System.out.println(Integer.toBinaryString(-2147483648));
 	}
 }

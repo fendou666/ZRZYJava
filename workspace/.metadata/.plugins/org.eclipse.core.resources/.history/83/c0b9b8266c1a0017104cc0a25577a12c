@@ -1,0 +1,25 @@
+package SerializableT;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class A1Test {
+	public void writeObj() throws Exception{
+		ObjectOutputStream objops = new ObjectOutputStream(new FileOutputStream("src/SerializableT/testObj.txt"));
+		BasicClass obj = new BasicClass(2,"123123");
+		objops.writeObject(obj);
+		objops.close();
+	}
+	public void readObj() throws Exception{
+		ObjectInputStream objips = new ObjectInputStream(new FileInputStream("src/SerializableT/testObj.txt"));
+		BasicClass objR = objips.readObject();
+	
+	}
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}
