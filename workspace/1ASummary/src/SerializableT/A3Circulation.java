@@ -79,8 +79,60 @@ public class A3Circulation {
 	
 //	打印圣诞树
 	public void getChristmasTree(){
-		
-		
+//		树叶
+		for(int i=1; i<=9;i++){
+//			左边大空白
+			for (int j=1;j<=9-i;j++){
+				System.out.print(" ");
+			}
+//			右边三角叠加
+			if (i<=3) {
+				for (int j=1;j<=2*i-1;j++) {
+					System.out.print("*");
+				}
+				
+			}else if(i<=6){
+//				i-3代表初次循环的1
+				for (int j=1;j<=2*(i-3)-1;j++) {
+					System.out.print("*");
+				}
+//				2*3-1代表第一行最大5个，2(i-1)指的是每行会少掉的值， 因为这里的i首次是4，所以要减去3才能是1
+				for (int j=1;j<=2*3-1 - 2*((i-3)-1);j++) {
+					System.out.print(" ");
+				}
+				for (int j=1;j<=2*(i-3)-1;j++) {
+					System.out.print("*");
+				}
+				
+			}else{
+				for (int j=1;j<=2*(i-6)-1;j++) {
+					System.out.print("*");
+				}
+				for (int j=1;j<=2*3-1 - 2*((i-6)-1);j++) {
+					System.out.print(" ");
+				}
+				for (int j=1;j<=2*(i-6)-1;j++) {
+					System.out.print("*");
+				}
+				for (int j=1;j<=2*3-1 - 2*((i-6)-1);j++) {
+					System.out.print(" ");
+				}
+				for (int j=1;j<=2*(i-6)-1;j++) {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
+//		树根
+		for(int i=1; i<=8;i++){
+			for(int j=1; j<=7; j++){
+				System.out.print(" ");
+			}
+			for(int j=1; j<=3; j++){
+				System.out.print("*");
+			}
+			System.out.println();
+		}
 	}
 	
 	
@@ -88,7 +140,8 @@ public class A3Circulation {
 		A3Circulation A3 = new A3Circulation();
 //		A3.getSum();
 //		A3.getMultiple();
-		A3.getTriagle();
+//		A3.getTriagle();
+		A3.getChristmasTree();
 	}
 //	
 	
