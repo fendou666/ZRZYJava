@@ -1,0 +1,10 @@
+package SerializableT;
+
+import java.util.Date;
+
+public class A2BasicClass {
+	private String city;
+	private Date dateTime;
+	private double average;
+	
+}

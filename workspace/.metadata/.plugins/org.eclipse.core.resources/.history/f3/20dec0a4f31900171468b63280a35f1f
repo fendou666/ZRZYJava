@@ -1,0 +1,11 @@
+package Basic;
+
+public class TestClass {
+	public static void theStatic(){
+		
+	}
+	
+	public void theMethod(){
+		System.out.println("这是普通方法");
+	}
+}

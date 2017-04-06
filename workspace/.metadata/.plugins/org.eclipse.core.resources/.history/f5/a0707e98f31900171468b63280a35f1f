@@ -1,0 +1,7 @@
+package Basic;
+
+public class TestClass {
+	public static void theStatic(){
+		
+	}
+}

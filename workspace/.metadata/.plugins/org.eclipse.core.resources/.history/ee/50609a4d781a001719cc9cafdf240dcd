@@ -1,0 +1,31 @@
+
+package SerializableT;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class A2Test {
+	public void writeObj() throws Exception{
+		ObjectOutputStream objops = new ObjectOutputStream(
+				new FileOutputStream("src/SerializableT/TestAll.txt"));
+		objops.writeObject("开始写入对象");
+		objops.writeDouble(222.222);
+		objops.writeChars("写入字符数组，形参是String");
+		objops.writeObject(new A2BasicClass(
+				
+				
+				));
+		
+	}
+	
+	public void readObj(){
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+	
+}
