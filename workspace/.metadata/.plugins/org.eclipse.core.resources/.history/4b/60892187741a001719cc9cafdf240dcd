@@ -1,6 +1,0 @@
-package SerializableT;
-
-public class A2BasicClass {
-	private String city;
-	private String statisticalTIme;
-}

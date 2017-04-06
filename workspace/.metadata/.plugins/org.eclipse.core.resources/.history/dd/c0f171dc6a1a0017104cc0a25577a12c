@@ -1,7 +1,0 @@
-package Serializable;
-
-public class BasicClass {
-	private int number;
-	private String str;
-	
-}
