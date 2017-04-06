@@ -45,6 +45,9 @@
 <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<<<<<<< HEAD
+<fullyQualifiedTypeName name="pack1.Class1"/>
+=======
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
@@ -52,6 +55,10 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
+=======
+>>>>>>> bbbae0194972e753952d4fd9ee666764952c0ed0
+>>>>>>> 8cec7b0ab01726ac505ac7a3898ba5b11794e258
 </qualifiedTypeNameHistroy>
