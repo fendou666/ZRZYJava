@@ -1,5 +1,5 @@
 
-package SerializableT;
+package S2SerializableT;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package SerializableT;
+package S2SerializableT;
 
 import java.io.Serializable;
 import java.util.Date;

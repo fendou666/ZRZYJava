@@ -1,4 +1,4 @@
-package Basic;
+package S1Basic;
 
 public class TestClass {
 	public static void theStatic(){

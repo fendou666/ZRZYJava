@@ -1,4 +1,4 @@
-package SerializableT;
+package S2SerializableT;
 
 public class A4QQRegex {
 	

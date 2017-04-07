@@ -1,4 +1,4 @@
-package SerializableT;
+package S2SerializableT;
 
 public class A3Circulation {
 //	1到10求和
@@ -135,13 +135,57 @@ public class A3Circulation {
 		}
 	}
 	
+	public void draw(String type, int init, int max){
+		if (type == " ") {
+			for (int i=init; i<=max; i++) {
+				System.out.print(" ");
+			}
+		}else {
+			for (int i=init; i<=max; i++) {
+				System.out.print("*");
+			}
+		}
+	}
+	
+//	打印圣诞树
+	public void getChristmasTree2(){
+//		树叶
+		for(int i=1; i<=9;i++){
+//			左边大空白
+			draw(" ", 1, 9-i);
+//			右边三角叠加
+			if (i<=3) {
+				draw("*", 1, 2*i-1);
+			}else if(i<=6){
+//				i-3代表初次循环的1
+				draw("*", 1, 2*(i-3)-1);
+//				2*3-1代表第一行最大5个，2(i-1)指的是每行会少掉的值， 因为这里的i首次是4，所以要减去3才能是1
+				draw(" ", 1, 2*3-1 - 2*((i-3)-1));
+				draw("*", 1, 2*(i-3)-1);
+			}else{
+				draw("*", 1, 2*(i-6)-1);
+				draw(" ", 1, 2*3-1 - 2*((i-6)-1));
+				draw("*", 1, 2*(i-6)-1);
+				draw(" ", 1, 2*3-1 - 2*((i-6)-1));
+				draw("*", 1, 2*(i-6)-1);
+			}
+			System.out.println();
+		}
+//		树根
+		for(int i=1; i<=8;i++){
+			draw(" ", 1, 7);
+			draw("*", 1, 7);
+			System.out.println();
+		}
+	}
 	
 	public static void main(String[] args) {
 		A3Circulation A3 = new A3Circulation();
 //		A3.getSum();
 //		A3.getMultiple();
 //		A3.getTriagle();
-		A3.getChristmasTree();
+//		A3.getChristmasTree();
+		A3.getChristmasTree2();
 	}
 //	
 	
