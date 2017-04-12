@@ -18,18 +18,18 @@ public class Jre1_7ToUp {
 					BufferedReader br = new BufferedReader(new FileReader(f));
 					StringBuffer sb = new StringBuffer();
 					while((s=br.readLine())!=null){
-						sb.append(s+"\r");
+						sb.append(s+"\n");
 					}
 					br.close();
-					if((i=sb.indexOf("/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"))!=-1){
+					//if((i=sb.indexOf("/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"))!=-1){
 						System.out.println("aaa");
 						BufferedWriter bw = new BufferedWriter(new FileWriter(f));
 						s = new String(sb);
-						s = s.replaceAll("/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7", "");
+						//s = s.replaceAll("/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7", "");
 						bw.write(s);
 						bw.flush();
 						bw.close();
-					}
+					//}
 //					System.out.println(sb);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
