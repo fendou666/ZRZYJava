@@ -243,7 +243,7 @@ public class Ex20170331 {
 		int b=3;
 		System.out.println(a^b);
 //		测试对象的默认值, 经测试对象的默认值与数组中的默认值一样
-//		ex.test();
+		ex.test();
 //		Object o = new Object();
 //		Object p;
 //		System.out.println(o);

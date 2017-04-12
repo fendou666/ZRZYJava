@@ -148,6 +148,20 @@ public class z {
 //		if(Object.class.equals(obj))
 		
 		System.out.println(Integer.reverse(1));
-		System.out.println(Integer.toBinaryString(-2147483648));
+		System.out.println(Integer.toBinaryString(-2147483648)); 
 	}
+	public void get(){
+		
+		for(int i=0; i<100; i++){
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.print("\r"+i+"%");
+		}
+	}
+	
+	
 }
