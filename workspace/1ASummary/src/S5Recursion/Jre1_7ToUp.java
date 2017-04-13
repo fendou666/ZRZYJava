@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class Jre1_7ToUp {
 
@@ -47,7 +48,27 @@ public class Jre1_7ToUp {
 		}
 		
 	}
+	
+	public static void lineFeed(){
+		File f = new File("./src/S5Recursion/lineFeedTest.txt");
+		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+			String s = "abc\rdef\nghi\r\njkl\n\rmno";
+			bw.write(s);
+			bw.flush();
+			bw.close();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
 	public static void main(String[] args) {
-		jreNameChange(new File("E:\\java\\javase\\ZRZYJava\\workspace"));
+//		jreNameChange(new File("E:\\java\\javase\\ZRZYJava\\workspace"));
+		lineFeed();
 	}
 }
