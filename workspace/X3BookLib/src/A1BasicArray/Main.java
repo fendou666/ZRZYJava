@@ -33,7 +33,7 @@ public class Main {
 	String [] bookLog; // 书的借阅记录  TODO
 //	String [] bookStatus; //书是否可借阅
 	// 书的管理
-	String [] bookSign; // 书是否被删除了
+//	String [] bookSign; // 书是否被删除了
 	
 	public Main(){
 		
@@ -97,7 +97,9 @@ public class Main {
 		pwd[1] = "123";
 		userType[1] = "user";
 	}
-	
+	public void initBook(){
+		
+	}
 	
 //	用户界面
 	public void userUI(){
