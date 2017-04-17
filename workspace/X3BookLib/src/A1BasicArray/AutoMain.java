@@ -1,10 +1,11 @@
 package A1BasicArray;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 
 
-public class Main {
+public class AutoMain {
 //	总变量
 	// 用户变量，以下3个变量数组长度要一样
 	private String [] user; // 所有用户，包括管理员
@@ -27,12 +28,12 @@ public class Main {
 	int    [] bookBorrowOutCount; //书的借出数量
 	int    [] bookResidueCount; //书的剩余数量
 	String [] bookUsers; // 已经借出去对应的用户
-	String [] bookLog; // 书的借阅记录  TODO
+//	String [] bookLog; // 书的借阅记录  TODO
 //	String [] bookStatus; //书是否可借阅
 	// 书的管理
 //	String [] bookSign; // 书是否被删除了
 	
-	public Main(){
+	public AutoMain(){
 		initUser(); // 总初始化
 		initUserBookInfo(); // 用户书初始化
 		initBook(); // 管理员变量书的初始化
@@ -135,6 +136,7 @@ public class Main {
 		default:
 			System.out.println("输入错误重新选择");
 		}
+		userUI();
 	}
 //	借书	
 	public void getBookUI(){
@@ -142,8 +144,8 @@ public class Main {
 		String bookStr = input.next();
 		String [] book = bookStr.split("_");
 		getBook(book[0], Integer.parseInt(book[1]));
-		System.out.println("继续借书，输入1");
-		if (input.nextInt()==1) {
+		System.out.println("继续借书，输入1，输入其他退出");
+		if (input.next().equals("1")) {
 			getBookUI();
 		}else {
 			return;
@@ -165,14 +167,17 @@ public class Main {
 //			剩余数量 
 			bookResidueCount[bookIndex] -= count;
 //			书借阅记录添加
-			bookUsers[bookIndex] = bookUsers[bookIndex]==null
-									?"":bookUsers[bookIndex]
+			bookUsers[bookIndex] = (bookUsers[bookIndex]==null
+					
+					?"":bookUsers[bookIndex])
 									+ "user" +currentUser  // 哪个用户
 									+  "_" + count +","; //借了基本书
+			System.out.println(bookUsers[bookIndex]);
 //			用户的借阅记录添加
-			userBook[currentUser] =  userBook[currentUser]==null
-									?"":userBook[currentUser]
+			userBook[currentUser] =  (userBook[currentUser]==null
+									?"":userBook[currentUser])
 									+  bookNumStr + "_" + count +",";
+			System.out.println(userBook[currentUser]);
 			// TODO 总借阅记录添加
 //			bookUsers[bookIndex] = bookUsers[bookIndex]==null
 //					?"":bookUsers[bookIndex]
@@ -199,6 +204,7 @@ public class Main {
 		int bookIndex = 0;
 		int count = 0;
 		for (String bookStr: userBook[currentUser].split(",")) {
+			System.out.println(bookStr);
 			String [] book = bookStr.split("_");
 //			TODO 如果书被删除了怎么办
 			bookIndex =  haveTheBook(book[0]);
@@ -228,10 +234,10 @@ public class Main {
 		System.out.println("3: 删除读书");
 		System.out.println("4: 修改读书信息");
 		System.out.println("5: 读书借阅记录");
-		System.out.println("6: 返回");
+		System.out.println("6: 退出");
 		switch(input.nextInt()){
 		case 1:
-			queryBook();
+			showAllBook();
 			break;
 		case 2:
 			addBook();
@@ -246,32 +252,32 @@ public class Main {
 			System.out.println("暂时不写");
 			break;
 		case 6:
-			break;
+			return;
 		default:
 			System.out.println("输入错误，重新输入");
-			adminUI();
+			break;
 		}
+		adminUI();
 	}
 //	管理员方法
 //	显示所有读书
 	public void showAllBook(){
+		System.out.println("书编号\t书名\t作者\t出版社\t已借出数量\t剩余数量\t所有借书人\t");
 		for (int i=0; i<bookNum.length; i++) {
-			if (bookNum == null){
-				break;
-			}
-			System.out.println("书编号：" + bookNum[i] +
-								"书名：" + bookName[i] +
-								"作者：" + bookAuthor[i] +
-								"出版社：" + bookPress[i] +
-								"书总数量：" + bookToutle[i] +
-								"已借出数量：" + bookBorrowOutCount[i] +
-								"剩余数量：" + bookResidueCount[i] +
-								"所有接触人：" + bookUsers[i] +
-								"书的借阅记录：" + bookLog[i]
+			System.out.println(bookNum[i] +
+								"\t" + bookName[i] +
+								"\t" + bookAuthor[i] +
+								"\t" + bookPress[i] +
+								"\t" + bookToutle[i] +
+								"\t" + bookBorrowOutCount[i] +
+								"\t" + bookResidueCount[i] +
+								"\t" + bookUsers[i]
+//								"所有接触人：" + bookUsers[i] +
+//								"书的借阅记录：" + bookLog[i]
 					);
 		}
 	}
-//	查询读书
+//	查询读书 TODO 暂时查询显示所有读书
 	public void queryBook(){
 		System.out.println("请输入书的编号：");
 		String bookNumStr = input.next();
@@ -295,20 +301,27 @@ public class Main {
 		System.out.println("请以这种格式添加书:书名_作者_出版社_书总数量");
 		String bookStr = input.next();
 		String [] bookProperties = bookStr.split("_");
-//		TODO 另一种方式定义一个变量记录已经添加的书的位置，一直只需要直接在位置后添加
-		for (int i=0;i<bookNum.length;i++) {
-			if (bookNum[i] == null) {
-				bookName[i] = bookProperties[0];
-				bookAuthor[i] = bookProperties[1];
-				bookPress[i] = bookProperties[2];
-				bookToutle[i] = Integer.parseInt(bookProperties[3]);
-				bookBorrowOutCount[i] = 0; // 可以不写
-				bookResidueCount[i] = bookToutle[i];
-				bookUsers[i] = null; // 可以不写
-				bookLog[i] = null; // 可以不写
-			}
-		}
+		bookNum	 = arrayAdd(bookNum, bookNumStr);
+		bookName	 = arrayAdd(bookName, bookProperties[0]);
+		bookAuthor = arrayAdd(bookAuthor, bookProperties[1]);
+		bookPress = arrayAdd(bookPress, bookProperties[2]);
+		bookToutle = arrayAdd(bookToutle, Integer.parseInt(bookProperties[3]));
+		bookBorrowOutCount = arrayAdd(bookBorrowOutCount, 0); 
+		bookResidueCount = arrayAdd(bookResidueCount,bookToutle[bookToutle.length-1]);
+		bookUsers = arrayAdd(bookUsers, null); // 可以不写
+//		bookLog = arrayAdd(bookLog, null);; // 可以不写 TODO
 	}
+	public <T> T[] arrayAdd(T[] tArs, T t){
+		T[] newTars = Arrays.copyOf(tArs, tArs.length+1); 
+		newTars[tArs.length] = t;
+		return newTars;
+	}
+	public int [] arrayAdd(int [] IArs, int i){
+		int[] newIars = Arrays.copyOf(IArs, IArs.length+1); 
+		newIars[IArs.length] = i;
+		return newIars;
+	}
+	
 //	书位置查找，如果书不存在返回-1, 存在返回书的位置
 	public int haveTheBook(String addBookNum) {
 		int bookNumIndex = -1;
@@ -326,14 +339,44 @@ public class Main {
 	
 //	删除读书
 	public void delBook(){
-		System.out.println("暂时没想到怎么做");
+		System.out.println("请输入书的编号");
+		String bookId = input.next();
+		int index = haveTheBook(bookId);
+		if(index==-1){
+			System.out.println("书的编号不存在");
+			return;
+		}
+//		TODO 关于删除读书如何将用户借走的书也删除，或者只能删除未借阅的读书
+		bookNum  = delArray(bookNum, index);
+		bookName	 = delArray(bookName, index);
+		bookAuthor = delArray(bookAuthor, index);
+		bookPress = delArray(bookPress, index);
+		bookToutle = delArray(bookToutle, index);
+		bookBorrowOutCount = delArray(bookBorrowOutCount, index); 
+		bookResidueCount = delArray(bookResidueCount,index);
+		bookUsers = delArray(bookUsers, index); // 可以不写
+//		bookLog = delArray(bookLog, index);; // 可以不写 TODO
+	}
+	public <T> T[] delArray(T[] tArs,int index){
+		T[] newTArs = Arrays.copyOf(tArs, tArs.length-1);
+		if (index<tArs.length-1){
+			System.arraycopy(tArs, index+1, newTArs, index, tArs.length-index-1);
+		}
+		return newTArs;
+	}
+	public  int[] delArray(int[] tArs,int index){
+		int[] newTArs = Arrays.copyOf(tArs, tArs.length-1);
+		if (index<tArs.length-1){
+			System.arraycopy(tArs, index+1, newTArs, index, tArs.length-index-1);
+		}
+		return newTArs;
 	}
 //	修改读书信息
 	public void changeBookInfo(){
 		System.out.println("请输入要修改的书号：");
 		String bookNumStr = input.next();
 		int bookChangeIndex = 0;
-		while((bookChangeIndex=haveTheBook(bookNumStr))!=-1){
+		while((bookChangeIndex=haveTheBook(bookNumStr))==-1){
 			System.out.println("输入的编号不存在，重新输入");
 			bookNumStr = input.next();
 		}
@@ -365,7 +408,7 @@ public class Main {
 													- bookBorrowOutCount[bookChangeIndex];
 				break;
 			case 5:
-				break;
+				return;
 			default:
 				System.out.println("输入错误");
 			}
@@ -381,8 +424,14 @@ public class Main {
 //		总变量
 //		用户变量
 //		管理员变量
-		Main m = new Main();
+		AutoMain m = new AutoMain();
 		m.firstPage();
+		
+//		String test = "user1_123,";
+//		String [] aa = test.split(",");
+//		for (String a : aa) {
+//			System.out.println(a);
+//		}
 		
 	}
 	

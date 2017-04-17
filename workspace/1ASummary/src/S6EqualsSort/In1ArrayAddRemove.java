@@ -12,7 +12,7 @@ public class In1ArrayAddRemove {
 		int [] newArray = Arrays.copyOf(array, array.length-1);
 		System.out.println(array[array.length-1]);
 //		以下代表删除第3位，从第0开始
-		System.arraycopy(array, 4, newArray, 3, array.length-1-4);
+		System.arraycopy(array, 4, newArray, 3, array.length-4);
 		for (int x:  newArray) {
 			System.out.print(x+", ");
 		}
