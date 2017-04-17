@@ -17,10 +17,7 @@ public class In1ArrayAddRemove {
 		}
 		System.out.println();
 //		以下代表删除第3位，从第0开始
-<<<<<<< HEAD
 //		经测试System.arraycopy如果copy数值不够(length<destPos到dest的length长度)，就会以最后一位值进行赋值
-=======
->>>>>>> d27df023f555731136d65b63813f31fa0d52d02f
 		System.arraycopy(array, 4, newArray, 3, array.length-4);
 		for (int x:  newArray) {
 			System.out.print(x+", ");

@@ -37,6 +37,12 @@ public class A1ArrayList {
 
 			@Override
 			public int compare(Apple o1, Apple o2) {
+				if(o1!=null){
+					return -1;
+				}else if(o2!=null){
+					return 1;
+				}
+				
 				int rec = 0;
 				if(o1.size>o2.size){
 					rec = 1;
@@ -52,7 +58,8 @@ public class A1ArrayList {
 			
 		});
 //		4. equalsÖØÐ´
-		
+		apples.add(new Apple(1.23, 33.1));
+		A1.showApples(apples);
 	}
 	
 }
@@ -79,6 +86,38 @@ class Apple{
 	}
 	public void setWeigth(double weigth) {
 		this.weigth = weigth;
+	}
+	
+	
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(size);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(weigth);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Apple other = (Apple) obj;
+		if (Double.doubleToLongBits(size) != Double
+				.doubleToLongBits(other.size))
+			return false;
+		if (Double.doubleToLongBits(weigth) != Double
+				.doubleToLongBits(other.weigth))
+			return false;
+		return true;
 	}
 	
 	@Override

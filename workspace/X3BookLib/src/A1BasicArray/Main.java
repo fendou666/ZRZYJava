@@ -108,9 +108,6 @@ public class Main {
 		bookUsers = 		new String []{null,null}; // 已经借出去对应的用户
 //		bookLog = 			new String []{"0001","0002"};  // 书的借阅记录  TODO
 	}
-	public void initBook(){
-		
-	}
 	
 //	用户界面
 	public void userUI(){
