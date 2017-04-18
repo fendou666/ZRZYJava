@@ -27,6 +27,7 @@ public class In1Server {
 							readInfo = br.readLine();
 							System.out.println("¿Í»§Ëµ£º" + readInfo);
 							if (readInfo.equals("88")){
+								br.close();
 								return;
 							}
 						}
@@ -49,13 +50,13 @@ public class In1Server {
 							inputMessage = sc.nextLine();
 							bw.write(inputMessage+"\n");
 							bw.flush();
-							if(inputMessage.equals("88")){
+							if(bw.equals("88")){
+								sc.close();
 								return;
 							}
 						}
 						
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					
@@ -64,7 +65,6 @@ public class In1Server {
 			
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
