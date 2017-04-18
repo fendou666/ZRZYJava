@@ -9,3 +9,6 @@ package com.softi.one;
 //private class A1Test {
 //	
 //}
+class aa{
+	
+}
