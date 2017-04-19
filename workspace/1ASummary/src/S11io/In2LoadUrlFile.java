@@ -1,5 +1,6 @@
 package S11io;
 
+import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,12 +20,12 @@ public class In2LoadUrlFile {
 			
 			byte[] b = new byte[1024];
 			int n = 0;
-			BufferedWriter buw = new BufferedWriter(new FileOutputStream("d://test.jpg"));
+			BufferedOutputStream bos= new BufferedOutputStream(new FileOutputStream("d://test.jpg")); 
 			while((n=ipts.read(b))!=-1){
-				
+				bos.write(b, 0, n);
 			}
-			
-			
+			ipts.close();
+			bos.close();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,8 +34,9 @@ public class In2LoadUrlFile {
 			e.printStackTrace();
 		}
 		
-		
 	}
 	
-	
+	public static void main(String[] args) {
+		loadUrlFile();
+	}
 }

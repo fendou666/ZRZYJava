@@ -4,85 +4,79 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 
-
-public class In1Client {
+public class In2Server {
 	public static void main(String[] args) {
 		try {
-			final Socket client = new Socket("127.0.0.1", 6666);
-			new Thread(new ReadMassenge(client, "服务器说：")).start();
-			new Thread(new WriteMessage(client)).start();
+			ServerSocket svst = new ServerSocket(9999);
+			while(true){
+				Socket accept = svst.accept();
+				new ReadInfo(accept, "客户说:").start();
+				new WriteInfo(accept).start();
+			}
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		
 	}
 }
 
-class ReadMassenge implements Runnable{
-	private Socket accept;
-	private String name;
-	
-	public ReadMassenge(Socket accept, String name){
+
+
+class ReadInfo extends Thread{
+	private final Socket accept;
+	private String massage;
+	private String positon;
+	public ReadInfo(Socket accept, String positon){
 		this.accept = accept;
-		this.name = name;
+		this.positon = positon;
+		System.out.println("当前客户线程名称：" + Thread.currentThread().getName());
 	}
 	
-	@Override
-	public void run() {
-		String message;
+	public void run(){
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(accept.getInputStream()));
 			while(true){
-				message = br.readLine();
-				System.out.println(name + message);
-				if(message.equals("88")){
-//					br.close();
+				massage = br.readLine();
+				System.out.println(positon + massage);
+				if (massage.equals("88")){
 					return;
 				}
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 }
-class WriteMessage implements Runnable {
-	Socket accept;
+
+class WriteInfo extends Thread{
+	private Socket accept;
+	private String massage;
 	
-	public WriteMessage(Socket accept){
+	public WriteInfo(Socket accept){
 		this.accept = accept;
 	}
-
-	@Override
-	public void run() {
-		String message;
+	
+	public void run(){
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(accept.getOutputStream()));
 			while(true){
-				message = br.readLine();
-				bw.write(message+"\n");
+				massage = br.readLine();
+				bw.write(massage+"\n");
 				bw.flush();
-				if(message.equals("88")){
+				if(massage.equals("88")){
 					return;
 				}
 			}
-			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
-	
-	
 }
-
 

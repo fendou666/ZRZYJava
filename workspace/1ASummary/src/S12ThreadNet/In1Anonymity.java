@@ -1,5 +1,7 @@
 package S12ThreadNet;
 
+import com.sun.org.apache.bcel.internal.classfile.InnerClass;
+
 public class In1Anonymity {
 	public static void main(String[] args) {
 		new Person("小明", 111){
@@ -9,7 +11,7 @@ public class In1Anonymity {
 		}.testaa();
 		
 		new Person("小明", 111).test();
-		
+//		内部类可以调用外部，而外部不可以调用内部类
 	}
 }
 
