@@ -11,7 +11,7 @@ public class A2Th1 implements Runnable {
 	}
 	@Override
 	public void run() {
-		for(;len<30;){
+		while(true){
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e1) {
@@ -29,6 +29,8 @@ public class A2Th1 implements Runnable {
 				bm.addA(new Apple1("Æ»¹û:" +len, 11.22));
 				len++;
 			}
+		
 		}
+			
 	}
 }
