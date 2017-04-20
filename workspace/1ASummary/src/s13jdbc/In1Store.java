@@ -1,4 +1,4 @@
-package s12jdbc;
+package s13jdbc;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -71,7 +71,6 @@ public class In1Store {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -83,7 +82,6 @@ public class In1Store {
 			Statement st = conn.createStatement();
 			rs = st.executeQuery(sql);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return rs;
@@ -95,7 +93,6 @@ public class In1Store {
 			Statement st = conn.createStatement();
 			rs = st.executeUpdate(sql);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return rs;
@@ -108,15 +105,29 @@ public class In1Store {
 			Statement st = conn.createStatement();
 			rs = st.execute(sql);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return rs;
 	}
 	
-	
+//	查询测试
 	public void testQuery(){
+		Connection conn = getConn();
+		String sql = "SELECT id, name, sex FROM student";
+		ResultSet rs = queryData(conn, sql);
 		
+		try {
+			while(rs.next()){
+				System.out.print(rs.getInt(1));
+				System.out.print("\t");
+				System.out.print(rs.getString(2));
+				System.out.print("\t");
+				System.out.print(rs.getString(2));
+				System.out.println();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 //	快速生成sql语句
 	public void testUpdate(){
@@ -128,9 +139,7 @@ public class In1Store {
 	}
 	
 	public static void main(String[] args) {
-		In1Store store = new In1Store("src/s12jdbc/dbConf.properties");
-		Connection conn = store.getConn();
-		store.closeConn(conn);
-		store.queryData();
+		In1Store store = new In1Store("src/s13jdbc/dbConf.properties");
+		store.testQuery();
 	}
 }
