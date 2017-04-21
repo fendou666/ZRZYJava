@@ -13,7 +13,8 @@ public class A2Th1 implements Runnable {
 	public void run() {
 		while(true){
 			try {
-				Thread.sleep(1000);
+				Thread.sleep((int)Math.random()*2000);
+//				Thread.sleep(1000);
 			} catch (InterruptedException e1) {
 				e1.printStackTrace();
 			}
@@ -21,6 +22,8 @@ public class A2Th1 implements Runnable {
 				while(bm.getAlApp().size()>=bm.getAppLength()){
 					try {
 						System.out.println(Thread.currentThread().getName()+"等待中");
+						bm.getAlApp().notifyAll();
+//						bm.getAlApp().notify(); 不能写成notify，因为可能唤醒的是生产者，然后生产者wait就会一直生产者wait
 						bm.getAlApp().wait();
 					} catch (InterruptedException e) {
 						e.printStackTrace();

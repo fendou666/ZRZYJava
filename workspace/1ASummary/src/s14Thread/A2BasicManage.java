@@ -28,8 +28,9 @@ public class A2BasicManage {
 	}
 	
 	public void removeA(){
+		System.out.println(Thread.currentThread().getName() + 
+				"删除了"  + alApp.get(0));
 		alApp.remove(0);
-		System.out.println(Thread.currentThread().getName() + "删除了一个苹果");
 	}
 	
 }
