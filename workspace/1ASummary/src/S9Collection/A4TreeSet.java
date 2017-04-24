@@ -3,6 +3,8 @@ package S9Collection;
 import java.util.TreeSet;
 import java.util.Iterator;
 
+import S9Collection.old.TreeSetApple;
+
 /**
  * 必须实现comparable接口, 实现排序
  * 必须实现equlas， 实现添加不重复元素
@@ -83,78 +85,4 @@ public class A4TreeSet {
 //		A4.testSort();
 //		A4.testHashCodeAndEquals();
 	}
-}
-class TreeSetApple implements Comparable<TreeSetApple>{
-	double db;
-	String name;
-	public TreeSetApple() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public TreeSetApple(double db, String name) {
-		super();
-		this.db = db;
-		this.name = name;
-	}
-	@Override
-	public String toString() {
-		return "TreeSetApple [db=" + db + ", name=" + name + "]";
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(db);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-	}
-	
-	
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		TreeSetApple other = (TreeSetApple) obj;
-		if (Double.doubleToLongBits(db) != Double.doubleToLongBits(other.db))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
-	}
-	
-	public String  compareString(double t){
-		String s = "00000" + t + "0000";
-		int index = s.indexOf('.');
-		s = s.substring(index-5, index+5);
-		return s;
-	}
-	@Override
-	public int compareTo(TreeSetApple o) {
-		int rec = 0;
-		if(this!=null && o!=null){
-			rec = 0;
-		}else if (this == null){
-			rec = 1;
-		}else if (o == null){
-			rec = -1;
-		}else {
-			String o1 = compareString(this.db);
-			String o2 = compareString(o.db);
-			o1 += this.name;
-			o2 += o.name;
-			rec = o1.compareTo(o2);
-		}
-		return rec;
-	}
-	
 }

@@ -1,11 +1,9 @@
-package S9Collection;
+package S9Collection.old;
 
 import java.util.HashSet;
 import java.util.Iterator;
 
-import S9Collection.old.hashSetApple;
-
-public class A3HashSet {
+public class A3HashSetOld {
 	private static HashSet<hashSetApple> apples = new HashSet<hashSetApple>();
 	
 	/**
@@ -64,11 +62,59 @@ public class A3HashSet {
 	 */
 	
 	public static void main(String[] args) {
-		A3HashSet A3 = new A3HashSet();
+		A3HashSetOld A3 = new A3HashSetOld();
 		A3.initHashSet();
 //		A3.showCollections();
 //		A3.testAdd();
 //		A3.testSort();
 		A3.testHashCodeAndEquals();
 	}
+}
+class hashSetApple{
+	double db;
+	String name;
+	public hashSetApple() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public hashSetApple(double db, String name) {
+		super();
+		this.db = db;
+		this.name = name;
+	}
+	@Override
+	public String toString() {
+		return "hashSetApple [db=" + db + ", name=" + name + "]";
+	}
+//	@Override
+//	public int hashCode() {
+//		final int prime = 31;
+//		int result = 1;
+//		long temp;
+//		temp = Double.doubleToLongBits(db);
+//		result = prime * result + (int) (temp ^ (temp >>> 32));
+//		result = prime * result + ((name == null) ? 0 : name.hashCode());
+//		return result;
+//	}
+	
+	
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		hashSetApple other = (hashSetApple) obj;
+//		if (Double.doubleToLongBits(db) != Double.doubleToLongBits(other.db))
+//			return false;
+//		if (name == null) {
+//			if (other.name != null)
+//				return false;
+//		} else if (!name.equals(other.name))
+//			return false;
+//		return true;
+//	}
+	
 }

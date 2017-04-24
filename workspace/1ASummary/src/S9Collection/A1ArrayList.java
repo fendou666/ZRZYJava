@@ -1,316 +1,144 @@
 package S9Collection;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.List;
+
+/**
+ * 替换第一步 将ArrayList更改为其他类型
+ * 替换第二部 将类名替换为当前类名
+ * @author Administrator
+ *
+ */
+
 
 public class A1ArrayList {
-	private Iterator<Apple> iterator;
-	private static List<Apple> apples = new ArrayList<Apple>();
-	private Iterator<Apple> iterator2;
+	private ArrayList<BasicClass1> bc1 		= new ArrayList<BasicClass1>();
+	private ArrayList<BasicClassEquals> bce = new ArrayList<BasicClassEquals>();
+	private ArrayList<BasicClassHash> bch	= new ArrayList<BasicClassHash>();
+	private ArrayList<BasicClassEqualsHash> bceh = new ArrayList<BasicClassEqualsHash>();
+	private ArrayList<BasicClassCMP> bccmp	= new ArrayList<BasicClassCMP>();
 	
-	public void showApples(List<Apple> apples){
-		iterator = apples.iterator();
+	public void showData(ArrayList t){
+		Iterator iterator = t.iterator();
 		while(iterator.hasNext()){
 			System.out.println(iterator.next());
 		}
 	}
-	/**
-	 * 方法名：
-	 * <p>功能描述：</p>
-	 * 
-	 * @param addE
-	 * 
-	 * @return
-	 * 
-	 * @see 引用其他类或者方法
-	 * 
-	 * @exception 会处理的异常名
-	 * 			异常描述
-	 * @throw 会抛出的异常
-	 * 
-	 */
-	public void addElement(Apple addE){
-		System.out.println("添加ArrayList");
-		System.out.println("前size: " + apples.size());
-		apples.add(addE);
-		System.out.println("后size: " + apples.size());
-	}
-	/**
-	 * 方法名：删除元素
-	 * 
-	 * @param delE 要删除的元素
-	 */
-	public void delElement(Apple delE){
-		System.out.println("删除ArrayList");
-		System.out.println("前size: " + apples.size());
-		apples.remove(delE);
-		System.out.println("后size: " + apples.size());
-	}
-	/**
-	 * 方法名：更新元素
-	 * 
-	 * @param updE 要更新的元素
-	 */
-	public void updElement(Apple updE){
-		updE.size = 0.1;
-	}
-	/**
-	 * 方法名：排序（调用默认排序）
-	 * 
-	 * <p>
-	 * 通过Collection.sort(); 调用默认排序
-	 * </p>
-	 */
-//	调用默认排序
-	public void sortElement1(){
-		Collections.sort(apples);
-	}
-//	comparator调用默认排序
-	public void sortElement2(){
-		Collections.sort(apples, new Comparator<Apple>(){
-
-			@Override
-			public int compare(Apple o1, Apple o2) {
-				
-				return o1.compareTo(o2);
-			}
-		});
-	}
-	public void sortElement3(){
-		Collections.sort(apples, new Comparator<Apple>(){
-
-			@Override
-			public int compare(Apple o1, Apple o2) {
-				// TODO Auto-generated method stub
-				return 1;
-			}
-		});
-	}
-//	调用默认排序
-	public void listSort1(){
-		apples.sort(new Comparator<Apple>() {
-			@Override
-			public int compare(Apple o1, Apple o2) {
-				return o1.compareTo(o2);
-			}
-		});
-	}
-//	自定义排序
-	public void listSort2(){
-		apples.sort(new Comparator<Apple>() {
-			@Override
-			public int compare(Apple o1, Apple o2) {
-				int rec = 0;
-				if(o1!=null&&o2!=null){
-					rec = 0;
-				}else if(o1!=null){
-					rec = -1;
-				}else if(o2!=null){
-					rec = 1;
-				}else{
-					rec = 0;
-					if(o1.size>o2.size){
-						rec = 1;
-					}else if (o1.size==o2.size){ 
-						if (!(o1.weigth==o2.weigth)){
-							rec = (o1.weigth-o2.weigth)>0?1:-1;
-						}
-					}else if (o1.size<o2.size) {
-						rec = -1;
-					}
-				}
-				return rec;
-			}
-		});
-	}
-
-	/**
-	 * 方法名：增测试
-	 * <p>未重写equals和HashCode方法：添加元素</p>
-	 * <p>重写equals和HashCode方法：还是添加元素</p>
-	 * <p>未重写equals方法：</p>
-	 * <p>重写equals方法：</p>
-	 * <p>未重写HashCode方法：</p>
-	 * <p>重写HasHcode方法：</p>
-	 * <p>
-	 */
-	public void testAdd(){
-		Apple addE1 = new Apple(1.1, 2.2);
-		Apple addE2 = new Apple(1.1, 2.2);
-		addElement(addE1);
-		addElement(addE2);
-		showApples(apples);
-	}
-	/**
-	 * 方法名：删除测试[就equals重写有效]
-	 * <p>未重写equals和HashCode方法：只是删除自己</p>
-	 * <p>重写equals和HashCode方法：删除值相同的元素</p>
-	 * <p>未重写equals方法：只是删除自己</p>
-	 * <p>重写equals方法：删除值相同的元素</p>
-	 * <p>未重写HashCode方法：只是删除自己</p>
-	 * <p>重写HasHcode方法：只是删除自己</p>
-	 * <p>
-	 */
-	public void testDel(){
-		Apple addE1 = new Apple(2.2, 3.3);
-		Apple addE2 = new Apple(2.2, 3.3);
-		apples.add(addE1);
-		apples.add(addE2);
-		delElement(addE1);
-		delElement(addE1);
-		showApples(apples);
-	}
-	/**
-	 * 方法名：更新测试
-	 * 对于更新产生了歧义，1.只更新对象的值，2，重新创建一个对象，值与添加的值相同，然后进行循环List中的值在进行排序
-	 * 关于更新一般是更新某个ID， 所以这是一个比较相同的过程，a.equals(b)的过程，找到相同值【根据是否重写】的ID
-	 * <p>未重写equals和HashCode方法：</p>
-	 * <p>重写equals和HashCode方法：</p>
-	 * <p>未重写equals方法：</p>
-	 * <p>重写equals方法：</p>
-	 * <p>未重写HashCode方法：</p>
-	 * <p>重写HasHcode方法：</p>
-	 * <p>
-	 */
-	public void testUpd(){
-		Apple updE1 = new Apple(3.3, 4.4);
-		Apple updE2 = new Apple(3.3, 4.4);
-		apples.add(updE1);
-		apples.add(updE2);
-		updElement(updE1);
-		System.out.println("更改后的值");
-		System.out.println(updE1);
-		updElement(updE1);
-		System.out.println("再次调用更新后");
-		showApples(apples);
-	}
-	/**
-	 * 方法名：测试增删改与equals和HashCode关系
-	 * 
-	 */
-	public void testEqualsHashCode(){
-//		testAdd();
-//		testDel();
-		testUpd();
-	}
-	/**
-	 * 方法名：排序测试
-	 * 
-	 * 
-	 * @param args
-	 */
-	public void testSort(){
-//		sortElement1();
-//		sortElement2();
-//		sortElement3();
-//		listSort1();
-		listSort2();
-	}
-	public void basicTest(){
-//		1. 证明是有序的
-		showApples(apples);
-//		2. 证明可以有null值
-		apples.add(null);
-		showApples(apples);
-//		3. 可以排序
-		listSort2();
-	}
-	public void otherTest(){
-//		4. equals重写[没有作用]
-		apples.add(new Apple(1.23, 33.1));
-		showApples(apples);
-//		5. HashCode重写
-		Apple a = new Apple(11.1, 22.22);
-		Apple b = new Apple(11.1, 22.22);
-		System.out.println(a.hashCode());
-		System.out.println(b.hashCode());
-		if(a.equals(b)){
-			System.out.println("equals重写成功");
-		}
-	}
-	public static void main(String[] args) {
-		A1ArrayList A1 = new A1ArrayList();
-		apples.add(new Apple(2.333, 12.33));
-		apples.add(new Apple(1.23, 23.47));
-		apples.add(new Apple(1.23, 5.123));
-		apples.add(new Apple(1.23, 33.1));
-		apples.add(new Apple(5.18, 10.789));
-		apples.add(new Apple(2.783, 13.78));
-		apples.add(new Apple(8.0, 5.987));
-
-//		6. compare重写
-//		A1.testSort();
-//		7. 测试增删改与equals和HashCode关系
-		A1.testEqualsHashCode();
-	}
 	
-}
-
-class Apple implements Comparable<Apple>{
-	double size;
-	double weigth;
-	public Apple() {
+	/**
+	 * 方法名：泛型添加
+	 * 并未实现
+	 */
+//	public <T> void addData(ArrayList<T> t){
+//		t.add(new T(1, "三年级二班", 66.4));
+//		t.add(new T(3, "三年级二班", 22.4));
+//		t.add(new T(5, "三年级二班", 51.4));
+//		t.add(new T(2, "三年级二班", 88.4));
+//		t.add(new T(4, "三年级二班", 33.4));
+//	}
+	
+	public void dataInit(){
+		bc1.add(new BasicClass1(1, "三年级二班", 66.4));
+		bc1.add(new BasicClass1(3, "三年级二班", 22.4));
+		bc1.add(new BasicClass1(5, "三年级二班", 51.4));
+		bc1.add(new BasicClass1(2, "三年级二班", 88.4));
+		bc1.add(new BasicClass1(4, "三年级二班", 33.4));
 		
+		bce.add(new BasicClassEquals(1, "三年级二班", 66.4));
+		bce.add(new BasicClassEquals(3, "三年级二班", 22.4));
+		bce.add(new BasicClassEquals(5, "三年级二班", 51.4));
+		bce.add(new BasicClassEquals(2, "三年级二班", 88.4));
+		bce.add(new BasicClassEquals(4, "三年级二班", 33.4));
+		
+		bch.add(new BasicClassHash(1, "三年级二班", 66.4));
+		bch.add(new BasicClassHash(3, "三年级二班", 22.4));
+		bch.add(new BasicClassHash(5, "三年级二班", 51.4));
+		bch.add(new BasicClassHash(2, "三年级二班", 88.4));
+		bch.add(new BasicClassHash(4, "三年级二班", 33.4));
+		
+		bceh.add(new BasicClassEqualsHash(1, "三年级二班", 66.4));
+		bceh.add(new BasicClassEqualsHash(3, "三年级二班", 22.4));
+		bceh.add(new BasicClassEqualsHash(5, "三年级二班", 51.4));
+		bceh.add(new BasicClassEqualsHash(2, "三年级二班", 88.4));
+		bceh.add(new BasicClassEqualsHash(4, "三年级二班", 33.4));
+		
+		bccmp.add(new BasicClassCMP(1, "三年级二班", 66.4));
+		bccmp.add(new BasicClassCMP(3, "三年级二班", 22.4));
+		bccmp.add(new BasicClassCMP(5, "三年级二班", 51.4));
+		bccmp.add(new BasicClassCMP(2, "三年级二班", 88.4));
+		bccmp.add(new BasicClassCMP(4, "三年级二班", 33.4));
 	}
-	public Apple(double size, double weigth) {
-		super();
-		this.size = size;
-		this.weigth = weigth;
+	
+	/**
+	 * 方法名：1. 测试有序
+	 * 总结： 默认添加默认输出
+	 */
+	public void testDefaultOrder(){
+		showData(bc1);
 	}
-	public double getSize() {
-		return size;
+	/**
+	 * 方法名：测试添加空值
+	 * 总结：可以添加空值
+	 */
+	public void testAddNull(){
+		bc1.add(null);
+		System.out.println("添加Null值后输出");
+		showData(bc1);
 	}
-	public void setSize(double size) {
-		this.size = size;
+	
+	public void testSort(){
+//		bc1.c  没有调出来compare方法，所有需要重写compare方法来排序
+		bccmp.add(null);
+		System.out.println("com类添加数据后");
+		showData(bccmp);
+		/**
+		 * 此处排序也可以自定以排序
+		 */
+		bccmp.sort(new Comparator<BasicClassCMP>(){
+			@Override
+			public int compare(BasicClassCMP o1, BasicClassCMP o2) {
+				return o1.compareTo(o2);
+			}
+		});
+		System.out.println("排序后的com类值");
+		showData(bccmp);
 	}
-	public double getWeigth() {
-		return weigth;
+	
+	/**
+	 * 测试值可否重复，通过实现equals和hashCode测试
+	 */
+	public void testValueRepetition(){
+		bceh.add(new BasicClassEqualsHash(1, "三年级二班", 66.4));
+		System.out.println("equals和HashCode添加重复值后");
+		showData(bceh);
 	}
-	public void setWeigth(double weigth) {
-		this.weigth = weigth;
+	
+	public void testValueNotRep(){
+		bce.add(new BasicClassEquals(1, "三年级二班", 66.4));
+		System.out.println("equals添加重复值后");
+		showData(bce);
+		
+		bch.add(new BasicClassHash(1, "三年级二班", 66.4));
+		System.out.println("HashCode添加重复值后");
+		showData(bch);
 	}
 	
 	
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(size);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(weigth);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Apple other = (Apple) obj;
-		if (Double.doubleToLongBits(size) != Double
-				.doubleToLongBits(other.size))
-			return false;
-		if (Double.doubleToLongBits(weigth) != Double
-				.doubleToLongBits(other.weigth))
-			return false;
-		return true;
+	public static void main(String[] args) {
+		A1ArrayList stuData = new A1ArrayList();
+		stuData.dataInit();
+//		默认排序测试
+		stuData.testDefaultOrder();
+//		添加空值测试
+		stuData.testAddNull();
+//		添加排序测试, 关于compare重写，主要是指必须添加，还是说排序时才添加
+		stuData.testSort();
+//		重复值测试, 即是否添加HashCode和equals, 添加上后不会重复【需要重写】，添加后依然重复【不需要重写】
+		stuData.testValueRepetition();
+//		测试到底是equals还是HashCode起作用
+		stuData.testValueNotRep();
 	}
 	
-	@Override
-	public String toString() {
-		return "Apple [size=" + size + ", weigth=" + weigth + "]";
-	}
-	@Override
-	public int compareTo(Apple o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
+
