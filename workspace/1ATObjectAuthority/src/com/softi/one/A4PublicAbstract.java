@@ -1,5 +1,5 @@
 package com.softi.one;
 
-public class A4PublicAbstract {
+public abstract class A4PublicAbstract {
 
 }
