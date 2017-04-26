@@ -1,16 +1,16 @@
 package S9Collection;
 
-public class BasicClassCMP implements Comparable<BasicClassCMP> {
+public class BasicClassCMPEquals implements Comparable<BasicClassCMPEquals> {
 	private int studentNum;
 	private String ClassName;
 	private double score;
 	
 	
-	public BasicClassCMP() {
+	public BasicClassCMPEquals() {
 	
 	}
 
-	public BasicClassCMP(int studentNum, String className, double score) {
+	public BasicClassCMPEquals(int studentNum, String className, double score) {
 		this.studentNum = studentNum;
 		ClassName = className;
 		this.score = score;
@@ -49,7 +49,7 @@ public class BasicClassCMP implements Comparable<BasicClassCMP> {
 
 	@Override
 	public String toString() {
-		return "BasicClassCMP [studentNum=" + studentNum + ", ClassName="
+		return "BasicClassCMPEquals [studentNum=" + studentNum + ", ClassName="
 				+ ClassName + ", score=" + score + "]";
 	}
 
@@ -67,9 +67,10 @@ public class BasicClassCMP implements Comparable<BasicClassCMP> {
 	}
 	
 	@Override
-	public int compareTo(BasicClassCMP o) {
+	public int compareTo(BasicClassCMPEquals o) {
 //		System.out.println("这是this " + this);
 //		System.out.println("这是o" + o);
+		
 		int rec = 0;
 		if(this == null && o == null){
 			rec =  0;
@@ -90,4 +91,30 @@ public class BasicClassCMP implements Comparable<BasicClassCMP> {
 		}
 		return rec;
 	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BasicClassCMPEquals other = (BasicClassCMPEquals) obj;
+		if (ClassName == null) {
+			if (other.ClassName != null)
+				return false;
+		} else if (!ClassName.equals(other.ClassName))
+			return false;
+		if (Double.doubleToLongBits(score) != Double
+				.doubleToLongBits(other.score))
+			return false;
+		if (studentNum != other.studentNum)
+			return false;
+		return true;
+	}
+	
+	
+	
 }
