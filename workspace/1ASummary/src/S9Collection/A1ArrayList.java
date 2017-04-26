@@ -89,7 +89,7 @@ public class A1ArrayList {
 	
 	public void testSort(){
 //		bc1.c  没有调出来compare方法，所有需要重写compare方法来排序
-		bccmp.add(null);
+//		bccmp.add(null);  添加null值需要对null值专门做处理
 		System.out.println("com类添加数据后");
 		showData(bccmp);
 		/**
