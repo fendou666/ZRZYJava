@@ -99,6 +99,7 @@ public class A2LinkedList {
 		 * 此处排序也可以自定以排序
 		 * List的sort方法要求必须重写关于null值的情况，不然会报错
 		 * Collection的sort没法做到对null值处理的情况
+		 * Collections的排序要求必须也对于null有相关的测试
 		 */
 		bccmp.sort(new Comparator<BasicClassCMP>(){
 			@Override
@@ -117,7 +118,6 @@ public class A2LinkedList {
 			}
 		});
 //		Collections.sort(bccmp);
-		
 		System.out.println("排序后的com类值");
 		showData(bccmp);
 	}

@@ -1,6 +1,8 @@
 package S9Collection;
 
 import java.util.HashSet;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Iterator;
 
 public class A3HashSet {
@@ -84,28 +86,11 @@ public class A3HashSet {
 		System.out.println("com类添加null数据后");
 		/**
 		 * 不支持直接sort
-		 * 
-		 * 
+		 *  * 排序需改为HashSet的排序
 		 */
-//		bccmp.sort(new Comparator<BasicClassCMP>(){
-//			@Override
-//			public int compare(BasicClassCMP o1, BasicClassCMP o2) {
-//				int rec = 0;
-//				if(o1 == null && o2 == null){
-//					rec =  0;
-//				}else if(o1 == null){
-//					rec =  1;
-//				}else if(o2 == null) {
-//					rec =  -1;
-//				}else{
-//					rec =  o1.compareTo(o2);
-//				}
-//				return rec;
-//			}
-//		});
-//		
-		System.out.println("默认输出的排序值");
+		System.out.println("com类添加null数据后,HashSet只要实现了comparable接口就可以排序??");
 		showData(bccmp);
+		
 	}
 	
 	/**

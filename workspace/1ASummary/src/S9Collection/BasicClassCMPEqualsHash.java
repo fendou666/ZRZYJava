@@ -1,16 +1,16 @@
 package S9Collection;
 
-public class BasicClassCMP implements Comparable<BasicClassCMP> {
+public class BasicClassCMPEqualsHash implements Comparable<BasicClassCMPEqualsHash> {
 	private int studentNum;
 	private String ClassName;
 	private double score;
 	
 	
-	public BasicClassCMP() {
+	public BasicClassCMPEqualsHash() {
 	
 	}
 
-	public BasicClassCMP(int studentNum, String className, double score) {
+	public BasicClassCMPEqualsHash(int studentNum, String className, double score) {
 		this.studentNum = studentNum;
 		ClassName = className;
 		this.score = score;
@@ -49,7 +49,7 @@ public class BasicClassCMP implements Comparable<BasicClassCMP> {
 
 	@Override
 	public String toString() {
-		return "BasicClassCMP [studentNum=" + studentNum + ", ClassName="
+		return "BasicClassCMPEqualsHash [studentNum=" + studentNum + ", ClassName="
 				+ ClassName + ", score=" + score + "]";
 	}
 
@@ -67,9 +67,10 @@ public class BasicClassCMP implements Comparable<BasicClassCMP> {
 	}
 	
 	@Override
-	public int compareTo(BasicClassCMP o) {
+	public int compareTo(BasicClassCMPEqualsHash o) {
 //		System.out.println("这是this " + this);
 //		System.out.println("这是o" + o);
+		
 		int rec = 0;
 		if(this == null && o == null){
 			rec =  0;
@@ -90,4 +91,42 @@ public class BasicClassCMP implements Comparable<BasicClassCMP> {
 		}
 		return rec;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((ClassName == null) ? 0 : ClassName.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(score);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + studentNum;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BasicClassCMPEqualsHash other = (BasicClassCMPEqualsHash) obj;
+		if (ClassName == null) {
+			if (other.ClassName != null)
+				return false;
+		} else if (!ClassName.equals(other.ClassName))
+			return false;
+		if (Double.doubleToLongBits(score) != Double
+				.doubleToLongBits(other.score))
+			return false;
+		if (studentNum != other.studentNum)
+			return false;
+		return true;
+	}
+	
+	
+	
 }

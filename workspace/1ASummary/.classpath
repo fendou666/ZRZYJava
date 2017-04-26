@@ -2,6 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="E:/1中软/java/javase/ZRZYJava/workspace/1ASummary/lib/ojdbc6.jar"/>
+=======
+	<classpathentry kind="lib" path="E:/java/javase/ZRZYJava/workspace/6JDBC/lib/ojdbc6.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+>>>>>>> ac566c3b13edc0c514a20ec64f90b631964f41c6
 	<classpathentry kind="output" path="bin"/>
 </classpath>
