@@ -88,7 +88,7 @@ public class A3HashSet {
 		 * 不支持直接sort
 		 *  * 排序需改为HashSet的排序
 		 */
-		System.out.println("com类添加null数据后,HashSet只要实现了comparable接口就可以排序??");
+		System.out.println("即使实现了compareTo接口也不能排序");
 		showData(bccmp);
 		
 	}

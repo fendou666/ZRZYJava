@@ -31,7 +31,6 @@ public class A2Th1 implements Runnable {
 						e.printStackTrace();
 					}
 				}
-				get();
 				bm.addA(new Apple1("Æ»¹û:" +len, 11.22));
 				len++;
 				

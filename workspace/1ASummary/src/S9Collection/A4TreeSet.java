@@ -1,4 +1,4 @@
-1package S9Collection;
+package S9Collection;
 
 import java.util.TreeSet;
 import java.util.TreeSet;

@@ -88,6 +88,7 @@ public class BasicClassCMP implements Comparable<BasicClassCMP> {
 			oStr += o.ClassName;
 			rec =  thisStr.compareTo(oStr);
 		}
+		System.out.println("这是返回值"+ rec);
 		return rec;
 	}
 }
