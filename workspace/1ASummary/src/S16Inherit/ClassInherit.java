@@ -1,6 +1,6 @@
 package S16Inherit;
 
-public class ClassInherit {
+public class ClassInherit  extends Father{
 	public int pb = 12;
 	private int pv = 15;
 	public static int pbs = 13;
@@ -13,6 +13,18 @@ public class ClassInherit {
 		getpvs();
 	}
 	
+	public int getPb() {
+		return pb;
+	}
+	public int getPv() {
+		return pv;
+	}
+	public static int getPbs() {
+		return pbs;
+	}
+	public static int getPvs() {
+		return pvs;
+	}
 	
 	public void getpb(){
 		System.out.println("child public int : " +pb);
@@ -28,7 +40,19 @@ public class ClassInherit {
 	}
 	
 	public static void main(String[] args) {
-		new ClassInherit();
+		
+		GrandF aa = new ClassInherit();
+//		Father aa = new ClassInherit();
+//		ClassInherit aa = new ClassInherit();
+		System.out.println("public int " + aa.getPb());
+		System.out.println("private int " + aa.getPv());
+		System.out.println("public static int " + aa.getPbs());
+		System.out.println("private static int " + aa.getPvs());
+		aa.getpb();
+		aa.getpv();
+		aa.getpbs();
+		aa.getpvs();
+		
 	}
 	
 }
@@ -45,6 +69,22 @@ class Father extends GrandF{
 		getpvs();
 	}
 	
+	public int getPb() {
+		return pb;
+	}
+	public int getPv() {
+		return pv;
+	}
+	public static int getPbs() {
+		return pbs;
+	}
+	public static int getPvs() {
+		return pvs;
+	}
+	
+	
+
+
 	public void getpb(){
 		System.out.println("father public int : " +pb);
 	}
@@ -72,7 +112,19 @@ class GrandF{
 		getpbs();
 		getpvs();
 	}
-	
+	public int getPb() {
+		return pb;
+	}
+	public int getPv() {
+		return pv;
+	}
+	public static int getPbs() {
+		return pbs;
+	}
+	public static int getPvs() {
+		return pvs;
+	}
+
 	public void getpb(){
 		System.out.println("Grand father public int : " +pb);
 	}

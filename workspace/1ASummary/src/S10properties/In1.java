@@ -135,7 +135,9 @@ public class In1 {
 	public void internation(){
 		Locale locDefault = Locale.getDefault();
 //		System.out.println(locDefault.toString());
-		System.out.println(new Locale("Chinese").getVariant());
+//		System.out.println(new Locale("Chinese").getVariant());
+		System.out.println(new Locale("Chinese").getCountry());
+		System.out.println("q23e");
 //		System.out.println(new Locale("Chinese").toString());
 //		System.out.println(Locale.getISOCountries());
 //		System.out.println(Locale.getISOLanguages());
