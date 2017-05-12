@@ -75,8 +75,18 @@ public class BookManager {
 		return rec;
 	}
 	
-	public boolean delBook(){
-		
+	public boolean delBook(String bookId){
+		boolean rec = false;
+		int index;
+		if((index =seacheById(bookId)) == -1){
+			System.out.println(" ÈID≤ª¥Ê‘⁄");
+			rec = false;
+		}else {
+			
+			System.arraycopy(src, srcPos, dest, destPos, length);
+			
+		}
+		return rec;
 	}
 	
 	public static void main(String[] args) {

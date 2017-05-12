@@ -84,6 +84,24 @@ public class SortAll {
 	}
 	
 	
+	/**
+	 * ≤‚ ‘≈≈–Ú
+	 * 
+	 */
+	public void testSort(int [] dates){
+		int tmp = 0;
+		for (int i=0; i<dates.length; i++) {
+			for (int j=0; j<dates.length-i-1;j++) {
+				if(dates[j]<dates[j+1]){
+					tmp = dates[j];
+					dates[j] = dates[j+1];
+					dates[j+1] = tmp;
+				}
+			}
+		}
+	}
+	
+	
 	
 	/**
 	 * Œ»∂®≈≈–Ú
@@ -107,7 +125,9 @@ public class SortAll {
 		int [] ary = {23,42,2,12,4512,1,14,51,4,52};
 //		sa.bubbleSort(ary);
 //		sa.selectSort(ary);
-		sa.insertSort(ary);
+//		sa.insertSort(ary);
+		sa.testSort(ary);
 		sa.printAry(ary);
+		
 	}
 }

@@ -20,6 +20,8 @@ public class Test {
 			}else {
 				System.out.println(x + " is NG");
 			}
+//			还有方法replace和splite
+			
 		}
 	}
 }
