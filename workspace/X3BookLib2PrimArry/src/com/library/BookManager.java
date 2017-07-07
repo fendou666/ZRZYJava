@@ -28,6 +28,21 @@ import java.util.Scanner;
 public class BookManager {
 	private Book[] bookAry;
 	
+	
+	public BookManager(){
+	
+	}
+	
+	/**
+	 * 方法名：显示所有读书<br>
+	 * 描述：循环遍历bookAry中的所有书
+	 */
+	public void showBooks(){
+		for(Book b: bookAry){
+			System.out.println(b);
+		}
+	}
+	
 	/**
 	 * 方法名：通过bookId查找书是否存在<br>
 	 * 描述：通过将形参的bookId与书库存bookAry比较确定存在这个书编号
@@ -66,7 +81,10 @@ public class BookManager {
 	
 	public boolean addBook(Book b){
 		boolean rec = false;
-		if(seacheById(b.getBookId()) == -1){
+//		TODO 参考别人怎么做
+		if(bookAry==null){
+			bookAry = new Book[]{b};
+		}else if(seacheById(b.getBookId()) == -1){
 			Book [] newAry = Arrays.copyOf(bookAry, bookAry.length+1);
 			newAry[newAry.length-1] = b;
 			bookAry = newAry;
@@ -75,19 +93,62 @@ public class BookManager {
 		return rec;
 	}
 	
+	/**
+	 * 方法名：删除书 <br>
+	 * 描述：根据ID找到要删除的书 <br>
+	 * 		如果没有这个ID直接返回false，<br>
+	 * 		如果找到这本书，通过Arrays.copyof 赋值一个比原数组小1一个长度的新数组<br>
+	 * 		然后(通过System.arraycopy)将要删除书的位置的后面的部分复制到新的数组中<br>
+	 * 
+	 * @param bookId 代表要删除的书的ID
+	 * @return false 代表删除不成功(当前ID不存在)，<br>
+	 * 		 	true  代表删除成功
+	 */
 	public boolean delBook(String bookId){
+		System.out.println("删除前读书");
+		showBooks();
 		boolean rec = false;
 		int index;
 		if((index =seacheById(bookId)) == -1){
 			System.out.println("书ID不存在");
 			rec = false;
 		}else {
-			
-			System.arraycopy(src, srcPos, dest, destPos, length);
-			
+			Book[] copyOf = Arrays.copyOf(bookAry, bookAry.length-1);
+			System.arraycopy(bookAry, index+1, copyOf, index, bookAry.length-1-index);
+			bookAry = copyOf;
+			System.out.println("删除后读书");
+			showBooks();
+			rec = true;
 		}
 		return rec;
 	}
+	
+	/**
+	 * 方法名：更新书 <br>
+	 * 描述：根据ID找到要更新的书 <br>
+	 * 		如果没有这个ID直接返回false，<br>
+	 * 		如果找到这本书，直接根据找到的书ID的index位置直接赋值新的书<br>
+	 * 
+	 * @param bookId 代表要更新的书的ID
+	 * @param newBook 代表要更新后的书
+	 * @return false 代表更新不成功(当前ID不存在)，<br>
+	 * 		 	true  代表更新成功
+	 */
+	public boolean updBook(String bookId, Book newBook){
+		System.out.println("删除前读书");
+		showBooks();
+		boolean rec = false;
+		int index;
+		if((index =seacheById(bookId)) == -1){
+			System.out.println("书ID不存在");
+			rec = false;
+		}else {
+			bookAry[index] = newBook;
+			rec = true;
+		}
+		return rec;
+	}
+	
 	
 	public static void main(String[] args) {
 		
