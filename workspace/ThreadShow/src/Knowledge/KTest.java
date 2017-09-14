@@ -32,16 +32,19 @@ public class KTest {
 //		K3StaticMethodLock ObjS3 = new K3StaticMethodLock();
 //		K3StaticMethodLock ObjS4 = new K3StaticMethodLock();
 //		K3StaticMethodLock ObjS5 = new K3StaticMethodLock();
+//		K3StaticMethodLock ObjS6 = new K3StaticMethodLock();
 //		Thread th1 = new Thread(new K3Thread1(ObjS1),  "线程1");
 //		Thread th2 = new Thread(new K3Thread2(ObjS2),  "线程2");
 //		Thread th3 = new Thread(new K3Thread3(ObjS3),  "线程3");
 //		Thread th4 = new Thread(new K3Thread4(ObjS4),  "线程4");
 //		Thread th5 = new Thread(new K3Thread5(ObjS5),  "线程5");
+//		Thread th6 = new Thread(new K3Thread6(ObjS6),  "线程6"); //同步块取代静态锁
 //		th1.start();
 //		th2.start();
 //		th3.start();
 //		th4.start();
 //		th5.start();
+//		th6.start();
 //		静态所与同步锁结合
 //		K4CommonAndStatic obj = new K4CommonAndStatic();
 //		Thread th1 = new Thread(new K4CommonThread(obj),  "普通方法线程");
@@ -62,9 +65,11 @@ public class KTest {
 //		Thread th1 = new Thread(new K6Thread1(obj),  "同步块线程");
 //		Thread th2 = new Thread(new K6Thread2(obj),  "同步方法线程");
 //		Thread th3 = new Thread(new K6Thread3(obj),  "静态方法线程");
+//		Thread th4 = new Thread(new K6Thread4(obj),  "静态方法类同步块线程");
 //		th1.start();
 //		th2.start();
 //		th3.start();
+//		th4.start();
 		
 //		等待与唤醒		
 		K7WaitNotify  obj =  new K7WaitNotify();

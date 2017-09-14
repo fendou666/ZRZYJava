@@ -68,4 +68,21 @@ public class K3StaticMethodLock {
 			
 		}
 	}
+	
+	public  static  void m6(){
+		synchronized(K3StaticMethodLock.class){
+			System.out.println("用6对象创建的" +Thread.currentThread().getName()+ "进入静态方法6");
+			System.out.println("6线程是用同步块取代同步静态方法");
+			for (int i=0;i<5;i++) {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				System.out.println("用6对象创建的" +Thread.currentThread().getName()+ "在运行，同对象的其他线程都给我候着");
+			}
+		}
+		
+	}
 }

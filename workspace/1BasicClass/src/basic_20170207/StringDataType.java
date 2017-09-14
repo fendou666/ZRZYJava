@@ -70,6 +70,5 @@ public class StringDataType {
 //		System.out.println(s1.offsetByCodePoints(2,6));
 //		System.out.println(s3.offsetByCodePoints(2,6));
 		
-		
 	}
 }

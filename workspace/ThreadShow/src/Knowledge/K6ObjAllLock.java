@@ -29,7 +29,7 @@ public class K6ObjAllLock {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("拥有相同成员变量的  " +Thread.currentThread().getName()+ " 在运行，同步方法与同步块形成竞争bbbbb");
+			System.out.println("拥有相同成员变量的  " +Thread.currentThread().getName()+ " 在运行，同步方法与同步块形成竞争AAA");
 			
 		}	
 	}
@@ -42,9 +42,26 @@ public class K6ObjAllLock {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("拥有相同成员变量的  " +Thread.currentThread().getName()+ " 在运行，静态方法有自己独自的锁，不受同步块锁和同步方法锁影响");
+			System.out.println("拥有相同成员变量的  " +Thread.currentThread().getName()+ " 在运行，静态方法有自己独自的锁，不受同步块锁和同步方法锁影响BBBB");
 			
 		}	
+	}
+	
+	public  static void m4(){
+		synchronized(K6ObjAllLock.class){
+			System.out.println("拥有相同成员变量的  " +Thread.currentThread().getName()+ "  进入静态方法");
+			System.out.println("证明静态锁锁的是类");
+			for (int i=0;i<5;i++) {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				System.out.println("拥有相同成员变量的  " +Thread.currentThread().getName()+ " 在运行，静态方法有自己独自的锁，不受同步块锁和同步方法锁影响bbb");
+				
+			}	
+		}
 	}
 	
 }
